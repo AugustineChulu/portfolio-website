@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/x-icon" href="../../images/about_me/favicon.jpg.png">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.jpg">
 
     <link rel="stylesheet" href="homeFX.css">
 
@@ -13,7 +13,7 @@
 <body>
     <div id="mainContainer">
 
-        <div id="page_body">
+        <div id="mainContainer_body">
 
             <div id="personal_info_container" class="floating_container centeredInRoot">
 
@@ -24,15 +24,15 @@
                     <header id="authors_name">Augustine Chulu</header>
 
                     <p id="intro_text">
-                        currently an undergraduate student majoring in Computer Science at MULUNGUSHI UNIVERSITY,
+                        an undergraduate student majoring in Computer Science at MULUNGUSHI UNIVERSITY,
                         <br>
                         front end web developer and graphics designer
                     </p>
 
                 </div>
 
-                <div id="personal_info">
-
+                <div id="portfolio_image_container">
+                    <img src="../../images/my_dislplay_picture.png" id="portfolio_image">
                 </div>
 
             </div>
@@ -53,149 +53,207 @@
 
                     <li id="projects" class="index"><a href="#projects_page">Projects</a></li>
 
-                    <li id="servicesOffered" class="index"><a href="#services_page">Services</a></li>
+                    <li id="services" class="index"><a href="#services_page">Services</a></li>
 
-                    <li id="contact_info" class="index"><a href="#page_footer">Contact details</a></li>
+                    <li id="contacts" class="index"><a href="#contact_info_container">Contact details</a></li>
 
                 </ul>
 
             </div>
 
-            <div id="about_page" class="floating_container centeredInRoot contentPage">
+            <div id="pages_container"  class="centeredInRoot">
 
-                <header class="page_title">About me</header>
+                <div id="about_page" class="contentPage">
 
-                <p id="about_me_txt">
-
-                    Welcome to my creative world, where code meets design, and innovation 
-                    knows no bounds.With a passion for crafting beautiful user interfaces, 
-                    As a graphic designer armed with Adobe Photoshop and Illustrator, 
-                    I can paint your imagination onto the canvas of the web.
-                    From stunning visuals to intuitive interactions, 
-                    I'm here to turn your dreams into reality. Explore my portfolio, 
-                    and let's embark on a journey where technology and artistry seamlessly intertwine.
-
-                </p>
-
-            </div>
-
-            <div id="skills_page" class="floating_container centeredInRoot contentPage">
-                
-                <div id="skills_description_container">
-
+                    <header class="page_title">About me</header>
+    
+                    <div class="page_body">
+    
+                        <p id="about_me_txt">
+    
+                            Welcome to my creative world, where code meets design, and innovation 
+                            knows no bounds.With a passion for crafting beautiful user interfaces, 
+                            As a graphic designer armed with Adobe Photoshop and Illustrator, 
+                            I can paint your imagination onto the canvas of the web.
+                            From stunning visuals to intuitive interactions, 
+                            I'm here to turn your dreams into reality. Explore my portfolio, 
+                            and let's embark on a journey where technology and artistry seamlessly intertwine.
+        
+                        </p>
+    
+                    </div>
+    
+                </div>
+    
+                <div id="skills_page" class="contentPage">
+    
                     <header class="page_title">Skills</header>
+    
+                    <div id="skillset_cards_container" class="page_body">
+    
+                        <div id="skillset1" class="skillset_card">
+    
+                            <span id="skillset1_txt" class="skillset_card_txt">
 
-                    <p id="skills_txt">
+                                <header class="skillset_card_txt_header">Web Design</header>
+        
+                                In the realm of web development and design, I bring a versatile skillset
+                                to the table. Proficient in 
+                                <br>- HTML
+                                <br>- CSS
+                                <br>- JavaScript
+                                <br>Beyond coding, my capabilities extend to the visual arts. I'm well-versed in 
+                                Adobe Photoshop and Adobe Illustrator enabling me to transform concepts into stunning 
+                                visual designs.
+            
+                            </span>
+            
+                            <div id="skillset1_image_container" class="skillset_image_container">
+                                <img src="../../images/web_skillset.png" alt="skills_image" class="skillset_image">
+                            </div>
+                                
+                        </div>
 
-                        In the realm of web development and design, I bring a versatile skillset
-                        to the table. Proficient in 
-                        <br>- HTML
-                        <br>- CSS
-                        <br>- JavaScript
-                        <br>Beyond coding, my capabilities extend to the visual arts. I'm well-versed in 
-                        <br>- Adobe Photoshop 
-                        <br>- Adobe Illustrator
-                        <br>enabling me to transform concepts into stunning 
-                        visual designs.
+                        <div id="skillset2" class="skillset_card">
+    
+                            <span id="skillset2_txt" class="skillset_card_txt">
 
-                    </p>
+                                <header class="skillset_card_txt_header">3D Modelling</header>
+        
+                                I do 3D modeling. While I may not be an expert, 
+                                I've honed my skills and developed a passion for creating 3D wonders. 
+                                I may not have all the answers, but I'm dedicated to delivering quality results. 
+                                I bring a fresh perspective to every project and embrace the opportunity to learn 
+                                and grow with each new challenge. Client satisfaction is my ultimate goal.
+            
+                            </span>
+            
+                            <div id="skillset2_image_container" class="skillset_image_container">
+                                <img src="../../images/3D_modelling_skillset.png" alt="skills_image" class="skillset_image">
+                            </div>
+                                
+                        </div>
 
+                        <div id="skillset3" class="skillset_card">
+    
+                            <span id="skillset3_txt" class="skillset_card_txt">
+
+                                <header class="skillset_card_txt_header">Graphics Design</header>
+        
+                                My capbilties encompass a range of design disciplines, from logo and branding to web 
+                                graphics and print materials. I'm a firm believer in the power of visuals to 
+                                communicate messages, evoke emotions, and leave a lasting impact. I'm dedicated to 
+                                delivering designs that not only meet but exceed your expectations.
+            
+                            </span>
+            
+                            <div id="skillset3_image_container" class="skillset_image_container">
+                                <img src="../../images/graphics_design_skillset.png" alt="skills_image" class="skillset_image">
+                            </div>
+                                
+                        </div>
+    
+                    </div>
+    
                 </div>
-
-                <div id="skills_image_container">
-                    <img src="../../images/about_me/my skillset.png" alt="skills_image" id="skills_image">
+    
+                <div id="projects_page" class="contentPage">
+                    
+                    <header class="page_title">Projects</header>
+    
+                    <div id="project_cards_container" class="page_body">
+    
+                        <div id="portfolio_site" class="project_card">
+    
+                            <span class="project_card_title">Portfolio site</span>
+    
+                            <img src="../../images/portfolio_card_dp.jpg" alt="portfolio_project_image" class="project_card_dp">
+    
+                            <span class="dp_comment">thank you for visiting</span>
+    
+                        </div>
+    
+                        <div id="graphics_design" class="project_card">
+    
+                            <span class="project_card_title">Digital art work</span>
+    
+                            <img src="../../images/graphics_design_card_dp.jpg" alt="graphics_design_project_image" class="project_card_dp">
+    
+                            <span class="dp_comment">visit my instagram <a href="#contact_info_container" class="word_link">here</a> </span>
+    
+                        </div>
+    
+                    </div>
+    
                 </div>
+    
+                <div id="services_page" class="contentPage">
+                    
+                    <header class="page_title">Services</header>
+    
+                    <div id="services_cards_container" class="page_body">
+    
+                        <div id="front_end_web_dev" class="services_card">
+    
+                            <span class="services_card_title">Web Design and Development</span>
+    
+                            <p id="front_end_web_dev_txt" class="services_card_txt">
+                                Whether you need a responsive, mobile-friendly site or want to enhance 
+                                your existing web presence, I'm here to turn your vision into a reality. 
+                                Let's collaborate and bring your online goals to life!
+                            </p>
 
-            </div>
+                        </div>
+    
+                        <div id="graphics_design_work" class="services_card">
+    
+                            <span class="services_card_title">Graphics design</span>
+    
+                            <p id="graphics_design_work_txt" class="services_card_txt">
+                                I'm here to bring your vision to life.Whether you're starting a new 
+                                venture or rebranding an existing one, let's collaborate to elevate 
+                                your brand's visual identity and make it stand out in the market.
+                            </p>
 
-            <div id="projects_page" class="floating_container centeredInRoot contentPage">
-                
-                <header class="page_title">Projects</header>
+                        </div>
+    
+                        <div id="consultancy" class="services_card">
+    
+                            <span class="services_card_title">Consulting and Training</span>
+    
+                            <p id="graphics_design_work_txt" class="services_card_txt">
+                                I'll help you define a strategic roadmap for your online presence. 
+                                From technology selection to user experience optimization, I'll ensure 
+                                your web projects are on the path to success. Let's work together to 
+                                turn your web development aspirations into a well-executed reality.
+                            </p>
 
-                <div id="project_cards_container">
+                        </div>
 
-                    <div id="portfolio_site" class="project_card">
+                        <div id="3D_modelling" class="services_card">
+    
+                            <span class="services_card_title">3D Modelling</span>
+    
+                            <p id="graphics_design_work_txt" class="services_card_txt">
+                                 From character models to architectural renderings and more, I approach each 
+                                 project with enthusiasm and a willingness to explore new ideas. If you're 
+                                 looking for someone who's passionate, creative, and committed to your vision, 
+                                 let's chat about your next 3D project.
+                            </p>
 
-                        <span class="project_card_title">Portfolio site</span>
-
-                        <img src="../../images/about_me/portfolio card dp.jpg" alt="portfolio_project_image" class="project_card_dp">
-
-                        <span class="dp_comment">thank you for visiting</span>
-
+                        </div>
+    
                     </div>
-
-                    <div id="graphics_design" class="project_card">
-
-                        <span class="project_card_title">Digital art work</span>
-
-                        <img src="../../images/about_me/graphics design card dp.jpg" alt="graphics_design_project_image" class="project_card_dp">
-
-                        <span class="dp_comment">visit my instagram</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div id="services_page" class="floating_container centeredInRoot contentPage">
-                
-                <header class="page_title">Services</header>
-
-                <div id="services_cards_container">
-
-                    <div id="front_end_web_dev" class="services_card">
-
-                        <span class="services_card_title">Web Design and Development</span>
-
-                        <p id="front_end_web_dev_txt" class="services_card_txt">
-                            Whether you need a responsive, mobile-friendly site or want to enhance 
-                            your existing web presence, I'm here to turn your vision into a reality. 
-                            Let's collaborate and bring your online goals to life!
-                        </p>
-
-                        <span class="services_card_prompt"><a href="#page_footer">contact me</a></span>
-
-                    </div>
-
-                    <div id="graphics_design_work" class="services_card">
-
-                        <span class="services_card_title">Graphics design</span>
-
-                        <p id="graphics_design_work_txt" class="services_card_txt">
-                            I'm here to bring your vision to life.Whether you're starting a new 
-                            venture or rebranding an existing one, let's collaborate to elevate 
-                            your brand's visual identity and make it stand out in the market.
-                        </p>
-
-                        <span class="services_card_prompt"><a href="#page_footer">make an order</a></span>
-
-                    </div>
-
-                    <div id="consultancy" class="services_card">
-
-                        <span class="services_card_title">Consulting and Training</span>
-
-                        <p id="graphics_design_work_txt" class="services_card_txt">
-                            I'll help you define a strategic roadmap for your online presence. 
-                            From technology selection to user experience optimization, I'll ensure 
-                            your web projects are on the path to success. Let's work together to 
-                            turn your web development aspirations into a well-executed reality.
-                        </p>
-
-                        <span class="services_card_prompt"><a href="#page_footer">contact me</a></span>
-
-                    </div>
-
+    
                 </div>
 
             </div>
 
         </div>
 
-        <div id="page_footer">
+        <div id="mainContainer_footer">
 
-            <div id="contact_info">
+            <div id="contact_info_container">
 
                 <span id="authors_name_info">Augustine<br>Chulu</span>
 

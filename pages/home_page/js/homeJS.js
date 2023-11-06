@@ -29,7 +29,7 @@ function changeVisibility()
 
     	indexes.setAttribute('style', 'display: flex;');
     	
-    	collapsibleHandle.setAttribute('style', 'background-color: var(--accent); color: #ffffff;');
+    	collapsibleHandle.setAttribute('style', 'background-color: var(--compliment); color: #ffffff;');
 
 	}
 
