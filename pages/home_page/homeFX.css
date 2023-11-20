@@ -2,11 +2,13 @@
 
 :root {
     /*pixel values*/
-	--corner_radius: 10px;
+	--corner_radius: 20px;
 	--blur_intensity: 25px;
     --blur_intensity2x: 50px;
 
     /*Matching Gradient color pallete*/
+    /*--accent: #ffe0a2;
+    /*--accent: #fdb935;*/
     --accent: #fdb935;
     --accent_primary: #BCB31F;
     --accent_secondary: #7BA827;
@@ -17,7 +19,7 @@
 
     --accent_darker: #805500;
 
-    --background_fill: #fffff0;
+    --background_fill: #fff4dd;
 
     --secondary_color: #666666;
 }
@@ -66,7 +68,6 @@ a {
   
 .floating_container{
     border-radius: var(--corner_radius);
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .page_title{
@@ -101,16 +102,34 @@ a {
 .skillset_card{
     height: fit-content;
     width: 100%;
+    background-color: #fff;
+    border-radius: var(--corner_radius);
 
     display: grid;
     grid-template-rows: 1fr auto;
-    gap: 30px;
+    row-gap: 30px;
+}
+
+.skillset_card_txt{
+    box-sizing: border-box;
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+}
+
+.skillset_icon{
+    padding-right: 10px;
 }
 
 .skillset_card_txt_header{
     font-size: 1rem;
     font-weight: bold;
     color: var(--accent_darker);
+    padding-bottom: 20px;
+    text-align: center;
 }
 
 .skillset_image_container{
@@ -194,6 +213,8 @@ a {
     border-top-right-radius: inherit;
 
     display: grid;
+    grid-template-rows: 100%;
+    grid-auto-flow: column;
     align-items: center;
 
     justify-self: center;
@@ -262,11 +283,10 @@ a {
         height: 100%;
         width: 100%;
         border-radius: inherit;
-        box-sizing: border-box;
-        padding: 20px;
 
         display: grid;
         grid-template-rows: 1fr auto auto auto 1fr;
+        justify-items: center;
     }
 
     #info_skill_title{
@@ -283,24 +303,28 @@ a {
         color: var(--compliment);
         box-sizing: border-box;
         padding: 10px 0;
+        text-align: center;
     }
 
     #intro_text{
         grid-row: 4/5;
+        text-align: center;
+
+        box-sizing: border-box;
+        padding: 20px;
     }
 
     #portfolio_image_container{
         grid-row: 1;
         height: fit-content;
         width: fit-content;
-        justify-self: end;
+        justify-self: center;
     }
 
     #portfolio_image{
         grid-row: 1;
         height: auto;
         width: 300px;
-        border-top-right-radius: var(--corner_radius);
     }
 
     #menu{
@@ -458,6 +482,12 @@ a {
     .skillset_card{
         grid-template-columns: auto;
         grid-template-columns: 1fr auto;
+        row-gap: 0;
+        column-gap: 30px;
+    }
+
+    .skillset_card_txt_header{
+        text-align: left;
     }
 
     .skillset_image{
@@ -472,10 +502,30 @@ a {
         width: 100%;
         grid-template-columns: auto auto;
         grid-template-rows: auto;
+
+        box-sizing: border-box;
+        padding: 0 20px;
     }
 
     #introduction_container{
         grid-row: 1;
+    }
+
+    #introduction_container{
+        justify-items: start;
+    }
+
+    #authors_name{
+        text-align: left;
+    }
+
+    #intro_text{
+        text-align: left;
+        padding: 0;
+    }
+
+    #menu{
+        padding: 30px 20px;
     }
 
     #project_cards_container{
