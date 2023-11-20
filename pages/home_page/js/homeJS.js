@@ -74,9 +74,25 @@ const links = document.querySelectorAll('a[href*="#"]');
 /**************************************************************************************************************/
 
 /**************************************************************************************************************/
-/*THIS SECTION HANDLES REDIRECTS TO CONTACT LINKS WHEN A CONTACT LINK IS PRESSED*/
+/*THIS SECTION HANDLES THE EFFECTS CAUSED BY THE STICKY BEHAVIOUR OF THE MENU*/
 
-function goToSite(event){
+var stickyElement = document.getElementById('menu');
+var name_title = document.getElementById('name_title');
+var isSticky = false;
 
-	console.log(event)
-}
+window.addEventListener('scroll', function() {
+    var rect = stickyElement.getBoundingClientRect();
+    var offset = rect.top;
+
+    if (offset <= 0 && !isSticky) {
+    // Element is now sticky
+        stickyElement.classList.add('stickyStyle');
+		name_title.classList.add('visible_name_title');
+        isSticky = true;
+    } else if (offset > 0 && isSticky) {
+    // Element is no longer sticky
+        stickyElement.classList.remove('stickyStyle');
+		name_title.classList.remove('visible_name_title');
+        isSticky = false;
+    }
+});
