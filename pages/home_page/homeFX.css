@@ -6,6 +6,13 @@
 	--blur_intensity: 25px;
     --blur_intensity2x: 50px;
 
+    --mobile_default_fontsize: 0.9rem;
+    --desktop_default_fontsize: 1rem;
+    --l1Header: 1.2rem;
+    --l2Header: 1.6rem;
+    --l3Header: 2rem;
+    --l4Header: 3rem;
+
     /*Matching Gradient color pallete*/
     /*--accent: #ffe0a2;
     /*--accent: #fdb935;*/
@@ -44,7 +51,7 @@ body{
 
 #mainContainer{
     background-color: var(--accent);
-    font-size: 0.9rem;
+    font-size: var(--mobile_default_fontsize);
 }
 
 p{
@@ -72,18 +79,18 @@ a {
 
 .page_title{
     color: var(--compliment);
-    font-size: 1.5rem;
+    font-size: var(--l3Header);
     font-family: header_text;
-
     box-sizing: border-box;
-    padding: 20px 10px;
+    padding: 10px;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.1);
 }
 
 .page_body{
     height: fit-content;
     width: 100%;
     box-sizing: border-box;
-    padding: 0 10px 10px 10px;
+    padding: 20px 10px 10px 10px;
 
     display: grid;
 }
@@ -96,13 +103,12 @@ a {
 .index{
     flex-basis: auto;
     font-family: plain_text1;
-    font-size: 1.2rem;
+    font-size: var(--desktop_default_fontsize);
 }
 
 .skillset_card{
     height: fit-content;
     width: 100%;
-    background-color: #fff;
     border-radius: var(--corner_radius);
 
     display: grid;
@@ -125,7 +131,7 @@ a {
 }
 
 .skillset_card_txt_header{
-    font-size: 1rem;
+    font-size: var(--l1Header);
     font-weight: bold;
     color: var(--accent_darker);
     padding-bottom: 20px;
@@ -151,18 +157,20 @@ a {
     height: fit-content;
     width: 100%;
     border-radius: var(--corner_radius);
-    background-color: var(--accent_darker);
+    background-color: #fff;
+
+    box-sizing: border-box;
+    padding: 0 10px;
 
     display: grid;
 }
 
 .project_card_title{
     width: 100%;
-    font-size: 1rem;
+    font-size: var(--l1Header);
     font-weight: bold;
     text-align: center;
     box-sizing: border-box;
-    color: #fff;
     padding: 10px;
 
     border-radius: 0;
@@ -172,13 +180,13 @@ a {
 
 .project_card_dp{
     height: auto;
-    width: 200px;
+    width: 210px;
     place-self: center;
+    border-radius: var(--corner_radius);
 }
 
 .dp_comment{
     width: 100%;
-    color: #fff;
     text-align: center;
     box-sizing: border-box;
     padding: 10px;
@@ -192,7 +200,7 @@ a {
     justify-self: stretch;
     width: 100%;
     border-radius: var(--corner_radius);
-    background-color: rgba(253, 185, 53, 0.2);
+    background-color: rgba(45, 154, 59, 0.1);
 
     display: grid;
     grid-template-rows: auto 1fr;
@@ -204,7 +212,7 @@ a {
 
 .services_card_title{
     width: fit-content;
-    font-size: 1rem;
+    font-size: var(--l1Header);
     font-weight: bold;
     color: var(--accent_darker);
 
@@ -218,6 +226,10 @@ a {
     align-items: center;
 
     justify-self: center;
+}
+
+.services_card_txt{
+    padding-top: 10px;
 }
 
 .contact_link{
@@ -297,14 +309,14 @@ a {
     #info_skill_title{
         grid-row: 2/3;
         color: var(--compliment);
-        font-size: 1.5rem;
+        font-size: var(--l2Header);
         font-family: header_text;
     }
 
     #authors_name{
         grid-row: 3/4;
         font-family: header_text;
-        font-size: 3rem;
+        font-size: var(--l4Header);
         color: var(--compliment);
         box-sizing: border-box;
         padding: 10px 0;
@@ -352,13 +364,14 @@ a {
         background-color: rgba(255, 255, 255, 0.5) !important;
         -webkit-backdrop-filter: blur(var(--blur_intensity)) !important;
 		backdrop-filter: blur(var(--blur_intensity)) !important;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
     }
 
     #name_title{
         grid-column: 1;
         grid-row: 1;
         font-family: header_text;
-        font-size: 1.5rem;
+        font-size: var(--l2Header);
         justify-self: start;
 
         opacity: 0;
@@ -401,7 +414,7 @@ a {
     }
 
     #skillset_cards_container{
-        row-gap: 30px;
+        row-gap: 100px;
     }
 
     #skillset1_image_container{
@@ -449,7 +462,7 @@ a {
 
     #authors_name_info{
         font-family: header_text;
-        font-size: 3rem;
+        font-size: var(--l4Header);
     }
 
     #authors_contact_details{
@@ -472,14 +485,14 @@ a {
 
     #menu_title{
         font-family: header_text;
-        font-size: 3rem;
+        font-size: var(--l4Header);
         margin-bottom: 40px;
     }
 
     #copyright_txt{
         margin-top: 20px;
         width: fit-content;
-        color: rgba(255, 255, 255, 0.3);
+        color: rgba(255, 255, 255, 0.5);
     }
 
 /*OPTIMIZATION FOR WIDER SCREENS ||  TABLETS */
@@ -537,7 +550,7 @@ a {
     }
 
     #menu{
-        padding: 30px 20px;
+        padding: 10px 20px;
     }
 
     #project_cards_container{
@@ -577,7 +590,7 @@ a {
 {
 
     #mainContainer_body{
-        font-size: 1rem;
+        font-size: var(--desktop_default_fontsize);
         grid-template-columns: 20% 30% 30% 20%;
     }
 
