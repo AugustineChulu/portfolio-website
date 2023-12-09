@@ -3,7 +3,7 @@
 :root {
     /*pixel values*/
 	--corner_radius: 20px;
-	--blur_intensity: 25px;
+	--blur_intensity: 15px;
     --blur_intensity2x: 50px;
 
     --mobile_default_fontsize: 0.9rem;
@@ -52,7 +52,7 @@ body{
 }
 
 #mainContainer{
-    background-color: var(--accent);
+    background-image: url(../../images/page_background.png);
     font-size: var(--mobile_default_fontsize);
 }
 
@@ -84,7 +84,7 @@ a {
     font-size: var(--l3Header);
     font-weight: bold;
     box-sizing: border-box;
-    padding: 10px;
+    margin: 0 10px;
     border-bottom: solid 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -261,8 +261,7 @@ a {
         width: 100%;
         box-sizing: border-box;
         padding: 5px 5px 30px 5px;
-        background-image: url(../../images/page_background.png);
-        background-blend-mode: lighten;
+        background-color: rgba(230, 218, 213, 0.96);
         
         display: grid;
         grid-auto-flow: row;
@@ -277,7 +276,7 @@ a {
 
         box-sizing: border-box;
         margin-top: 30px;
-        padding: 10px;
+        padding: 20px 10px;
         
         display: grid;
         grid-auto-flow: row;
@@ -374,7 +373,7 @@ a {
     #name_title{
         grid-column: 1;
         grid-row: 1;
-        font-size: var(--l2Header);
+        font-size: var(--l1Header);
         font-weight: bold;
         justify-self: start;
 
@@ -455,7 +454,7 @@ a {
 
         display: grid;
         box-sizing: border-box;
-        padding: 60px 20px 10px 20px;
+        padding: 40px 20px 20px 20px;
     }
 
     #contact_info_container{
@@ -574,6 +573,10 @@ a {
 
     #menu_title{
         margin-top: 0;
+    }
+
+    #name_title{
+        font-size: var(--l2Header);
     }
 
     #project_cards_container{
