@@ -504,39 +504,63 @@ a{
 @media only screen and (min-width: 660px)
 {
 
-    body{
-        font-size: var(--desktop_default_fontsize);
+    #topBar{
+        padding: 0 20px;
+    }
+
+    #bottomBar{
+        padding: 10px 20px 0 20px;
     }
 
     #pageHeader{
-        margin: 0 15%;
+        margin: 0 5%;
+    }
+    
+    #menu{
+        margin: 0 5%;
+    }
+    
+    #pageBody{
+        margin: 10px 5% 50px 5%;
+    }
+
+    #pageFooter{
+        justify-content: start;
+
+        padding: 50px 5% 20px 5%;
+    }
+
+}
+
+/*OPTIMIZATION FOR WIDER SCREENS ||  LAPTOPS */
+
+@media only screen and (min-width: 1000px)
+{
+
+    body{
+        font-size: var(--desktop_default_fontsize);
     }
 
     #authorDetails{
         place-items: start;
         text-align: start;
     }
+
+    #pageHeader{
+        margin: 0 15%;
+    }
     
     #menu{
         margin: 0 15%;
-    }
-
-    #topBar{
-        padding: 0 20px;
-    }
-    
-    #bottomBar{
-        padding: 10px 20px 0 20px;
     }
     
     #pageBody{
         margin: 10px 15% 50px 15%;
     }
-
+    
     #pageFooter{
         justify-content: start;
 
         padding: 50px 15% 20px 15%;
     }
-
 }
