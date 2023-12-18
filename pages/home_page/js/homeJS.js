@@ -61,14 +61,10 @@ window.addEventListener('scroll', function() {
 
     if (offset <= 0) {
     // Element is now sticky
-        if(!stickyElement.classList.contains('visible')){
-            stickyElement.classList.add('visible');
-        }
+        stickyElement.classList.add('visible');
     } else if (offset > 0) {
     // Element is no longer sticky
-        if(stickyElement.classList.contains('visible')){
-            stickyElement.classList.remove('visible');
-        }
+        stickyElement.classList.remove('visible');
     }
 
 });

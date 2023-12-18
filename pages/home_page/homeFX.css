@@ -4,7 +4,7 @@
     /*pixel values*/
     --radius10: 10px;
 	--radius20: 20px;
-    --intensity5x: 4px;
+    --intensity5x: 5px;
 	--intensity10x: 10px;
     --intensity30x: 30px;
 
@@ -79,7 +79,7 @@ a{
 }
 
 .visible{
-    opacity: 1 !important;
+    display: block !important;
 }
 
 .focusedSection{
@@ -90,7 +90,6 @@ a{
 /*OPTIMIZATION CODE FOR LONG SCREENS || PHONES */
 
 #pageHeader{
-    background-color: var(--surface_fill);
     justify-content: center;
     -webkit-backdrop-filter: blur(var(--intensity5x)); 
 	backdrop-filter: blur(var(--intensity5x));
@@ -98,7 +97,7 @@ a{
 
     box-sizing: border-box;
     border: solid 2px var(--faint_gray);
-    padding: 30px 0;
+    padding: 50px 0;
 }
 
 #authorDPContainer{
@@ -144,8 +143,7 @@ a{
 }
 
 #menu{
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    display: none;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     z-index: 1;
@@ -216,10 +214,9 @@ a{
 }
 
 #pageBody{
-    background-color: rgba(0,0,0,0.2);
     border-radius: var(--radius20);
-    -webkit-backdrop-filter: blur(var(--intensity10x));
-    backdrop-filter: blur(var(--intensity10x));
+    -webkit-backdrop-filter: blur(var(--intensity5x));
+    backdrop-filter: blur(var(--intensity5x));
     display: flex;
     flex-flow: column nowrap;
     row-gap: 80px;
@@ -261,8 +258,9 @@ a{
 
 .skillsCard{
     flex-basis: 300px;
-    background-color: rgba(255,255,255,0.05);
+    background-color: var(--background_fill);
     border-radius: var(--radius20);
+    border: solid 1px var(--faint_gray);
 
     display: flex;
     flex-flow: column nowrap;
@@ -290,14 +288,14 @@ a{
 }
 
 .pill{
-    background-color: var(--red_orange);
+    background-color: #fff;
     box-sizing: border-box;
     padding: 5px;
     border-radius: var(--radius20);
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    border: solid 2px var(--faint_gray);
+    border: solid 1px var(--orange);
 }
 
 .skillIcon{
@@ -309,6 +307,7 @@ a{
 }
 
 .skill{
+    color: var(--orange);
     margin: 0 10px;
     font-weight: bold;
 }
@@ -361,12 +360,13 @@ a{
     flex-basis: 250px;
     background-color: #fff;
     border-radius: var(--radius20);
-    border: solid 4px var(--faint_gray);
 }
 
 .projectDetailsContainer{
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.6);
     border-radius: var(--radius20);
+    box-sizing: border-box;
+    margin: 10px;
 }
 
 #portfolioImage{
@@ -380,7 +380,6 @@ a{
 .projectImageContainer{
     height: 250px;
     background-size: 100% 100%;
-    background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
 
     border-radius: inherit;
@@ -396,7 +395,7 @@ a{
     color: #000;
     text-align: center;
     box-sizing: border-box;
-    padding: 10px 0;
+    padding: 20px 0;
     font-weight: bold;
     font-size: var(--H1-2);
     border-bottom-left-radius: var(--radius20);
@@ -425,22 +424,23 @@ a{
     flex-basis: 300px;
     border-radius: var(--radius20);
     position: relative;
+    background-color: var(--background_fill);
 
     box-sizing: border-box;
     border: solid 4px rgba(255,255,255,1);
-    padding: 30px 20px 20px 20px;
+    padding: 40px 20px 20px 20px;
 }
 
 .serviceIcon{
     color: #000;
     background-color: #fff;
     position: absolute;
-    top: -20px;
-    left: 20px;
+    top: -15px;
+    left: -15px;
     border-radius: var(--radius10);
 
     box-sizing: border-box;
-    padding: 10px;
+    padding: 15px;
 }
 
 .serviceName{
@@ -459,7 +459,7 @@ a{
     background-color: rgb(0,0,20);
 
     box-sizing: border-box;
-    padding: 50px 10px 10px 10px;
+    padding: 50px 10px 20px 10px;
 }
 
 .footerContentContainer{
@@ -536,7 +536,7 @@ a{
     #pageFooter{
         justify-content: start;
 
-        padding: 50px 15% 10px 15%;
+        padding: 50px 15% 20px 15%;
     }
 
 }
