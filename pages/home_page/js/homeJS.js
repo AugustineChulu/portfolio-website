@@ -4,36 +4,14 @@
 
 /**************************************************************************************************************/
 /*THIS SECTION HANDLES THE MENU EVENTS ON MOBILE DEVICES*/
+var pagesBtn = document.getElementById('pagesBtn');
+var bottomBar = document.getElementById('bottomBar');
 
-let indexes = document.getElementById('indexes');
-
-const indexesStyle = window.getComputedStyle(indexes,null);
-
-const collapsibleHandle = document.getElementById('show_indexes');
-
-// event listener for the collapsible handle
-collapsibleHandle.addEventListener('click', changeVisibility);
-
-//event handler for openning or closing the pages list
-function changeVisibility()
-{
-
-	if (indexesStyle.getPropertyValue('display') != 'none'){
-
-		indexes.setAttribute('style', 'display: none;');
-		
-		collapsibleHandle.setAttribute('style', 'background-color: initial; color: initial;');
-
-	}
-	else {
-
-    	indexes.setAttribute('style', 'display: flex;');
-    	
-    	collapsibleHandle.setAttribute('style', 'background-color: var(--compliment); color: #ffffff;');
-
-	}
-
-}
+pagesBtn.addEventListener('click', (event) =>{
+    
+    event.target.classList.toggle('activePagesBtn');
+    bottomBar.classList.toggle('visibleBottomBar');
+})
 
 /**************************************************************************************************************/
 
@@ -41,35 +19,32 @@ function changeVisibility()
 /*THIS SECTION HANDLES THE PAGES SMOOTH SCROLL BEHAVIOR WHEN A MENU ITEM IS PRESSED*/
 
 const scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 800, // Adjust the scrolling speed
-	offset: 130, // Offset to control the scrolling endpoint
+	speed: 1000, // Adjust the scrolling speed
+	offset: 180, // Offset to control the scrolling endpoint
 	updateURL: false, // Prevent the URL from updating
 });
 
-const links = document.querySelectorAll('a[href*="#"]');
-    const offset = 200; // Adjust this to match your header height or desired offset
+// const links = document.querySelectorAll('a[href*="#"]');
+//     const sectionOffset = -500; // Adjust this to match your header height or desired offset
 
-    function updateActiveLink() {
-        const fromTop = window.scrollY + offset;
+//     function updateActiveLink() {
+//         const fromTop = window.scrollY + sectionOffset;
 
-        links.forEach(link => {
-            const section = document.querySelector(link.hash);
-            if (
-                section.offsetTop <= fromTop &&
-                section.offsetTop + section.offsetHeight > fromTop
-            ) {
+//         links.forEach(link => {
+//             const section = document.querySelector(link.hash);
+//             if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
 
-				if(link.parentElement.classList.contains('index'))
-                	link.parentElement.classList.add('active');
-            } else {
+//                 if(!link.classList.contains('footer'))
+//                     link.classList.add('focusedSection');
 
-				if(link.parentElement.classList.contains('index'))
-                	link.parentElement.classList.remove('active');
-            }
-        });
-    }
+//             } else {
 
-    window.addEventListener('scroll', updateActiveLink);
+//                 link.classList.remove('focusedSection');
+//             }
+//         });
+//     }
+
+//     window.addEventListener('scroll', updateActiveLink);
 
 /**************************************************************************************************************/
 
@@ -77,22 +52,23 @@ const links = document.querySelectorAll('a[href*="#"]');
 /*THIS SECTION HANDLES THE EFFECTS CAUSED BY THE STICKY BEHAVIOUR OF THE MENU*/
 
 var stickyElement = document.getElementById('menu');
-var name_title = document.getElementById('name_title');
-var isSticky = false;
+var pageHeader = document.getElementById('pageHeader');
 
 window.addEventListener('scroll', function() {
-    var rect = stickyElement.getBoundingClientRect();
-    var offset = rect.top;
+    
+    var rect = pageHeader.getBoundingClientRect();
+    var offset = rect.bottom;
 
-    if (offset <= 0 && !isSticky) {
+    if (offset <= 0) {
     // Element is now sticky
-        stickyElement.classList.add('stickyStyle');
-		name_title.classList.add('visible_name_title');
-        isSticky = true;
-    } else if (offset > 0 && isSticky) {
+        if(!stickyElement.classList.contains('visible')){
+            stickyElement.classList.add('visible');
+        }
+    } else if (offset > 0) {
     // Element is no longer sticky
-        stickyElement.classList.remove('stickyStyle');
-		name_title.classList.remove('visible_name_title');
-        isSticky = false;
+        if(stickyElement.classList.contains('visible')){
+            stickyElement.classList.remove('visible');
+        }
     }
+
 });
