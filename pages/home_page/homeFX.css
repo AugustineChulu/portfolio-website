@@ -362,15 +362,12 @@ a{
 
 .projectCard{
     flex-basis: 250px;
-    background-color: #fff;
     border-radius: var(--radius20);
 }
 
 .projectDetailsContainer{
-    box-shadow: 0 0 10px 5px rgba(0,0,0,0.5);
     border-radius: var(--radius20);
     box-sizing: border-box;
-    margin: 10px;
 }
 
 #portfolioImage{
@@ -385,8 +382,11 @@ a{
     height: 250px;
     background-size: 100% 100%;
     background-blend-mode: lighten;
+    border: solid 3px #fff;
+    border-bottom: none;
 
-    border-radius: inherit;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -402,8 +402,6 @@ a{
     padding: 20px 0;
     font-weight: bold;
     font-size: var(--H1-2);
-    border-bottom-left-radius: var(--radius20);
-    border-bottom-right-radius: var(--radius20);
 
     -webkit-backdrop-filter: blur(var(--intensity10x));
     backdrop-filter: blur(var(--intensity10x));
@@ -411,8 +409,11 @@ a{
 
 .projectRemark{
     color: #000;
+    background-color: #fff;
     text-align: center;
     padding: 10px 0;
+    border-bottom-left-radius: var(--radius20);
+    border-bottom-right-radius: var(--radius20);
 }
 
 #servicesContainer{
