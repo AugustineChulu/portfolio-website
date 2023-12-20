@@ -33,7 +33,7 @@
 
 @font-face {
 	font-family: plain_text1;
-	src: url("../../fonts/AdobeHeitiStd-Regular.otf");
+	src: url("../../fonts/SF\ New\ Republic.ttf");
 }
 
 @font-face {
@@ -135,6 +135,7 @@ a{
 }
 
 #authorName{
+    font-family: plain_text1;
     color: var(--orange);
     display: block;
     font-weight: bold;
@@ -171,6 +172,7 @@ a{
 }
 
 #menuAuthorName{
+    font-family: plain_text1;
     font-weight: bold;
     font-size: var(--H1-4);
     color: #fff;
@@ -231,6 +233,7 @@ a{
 }
 
 .sectionTitle{
+    font-family: plain_text1;
     color: var(--orange);
     font-weight: bold;
     font-size: var(--H1-4);
@@ -468,6 +471,7 @@ a{
 }
 
 .FCCheader{
+    font-family: plain_text1;
     font-size: var(--H1-5);
     font-weight: bold;
     color: rgba(255,255,255,0.5);
