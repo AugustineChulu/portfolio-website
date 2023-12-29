@@ -25,6 +25,7 @@
     --background_fill: rgba(0,0,20,0.8);
     --surface_fill: rgba(255,255,255,0.05);
     --faint_gray: rgba(255,255,255,0.2);
+    --gray: #333;
 
     /* Color Theme Swatches in RGBA */
     --orange-pallete-1: rgb(255, 120, 1);
@@ -84,7 +85,7 @@ a{
 }
 
 .visible{
-    display: block !important;
+    opacity: 1 !important;
 }
 
 .focusedSection{
@@ -130,22 +131,22 @@ a{
 }
 
 #authorDetails{
-    display: grid;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     color: #fff;
-    text-align: center;
-    place-items: center;
     padding: 0 30px;
 }
 
 #authorSkill{
-    display: block;
     font-size: var(--H1-4);
+    text-align: center;
 }
 
 #authorName{
     font-family: plain_text1;
-    display: block;
     font-weight: bold;
+    text-align: center;
     font-size: var(--H2-3);
     padding-top: 20px;
 }
@@ -157,14 +158,14 @@ a{
     gap: 10px;
     justify-self: end;
 
-    margin: 20px 20px 0 20px;
+    margin: 50px 15px 0 15px;
 }
 
 .headerContactLink{
     height: 35px;
     width: 35px;
-    background-color: #fff;
-    color: #000;
+    color: #fff;
+    background-color: var(--gray);
     border-radius: 50%;
 
     display: flex;
@@ -174,7 +175,8 @@ a{
 }
 
 #menu{
-    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     z-index: 100;
@@ -208,12 +210,12 @@ a{
     font-family: plain_text1;
     font-weight: bold;
     font-size: var(--H1-4);
-    color: #fff;
+    color: var(--gray);
 }
 
 #pagesBtn{
-    border: solid 3px #fff;
-    color: #fff;
+    border: solid 3px var(--gray);
+    color: var(--gray);
     font-weight: bold;
     background-color: transparent;
     border-radius: var(--radius20);
@@ -221,8 +223,8 @@ a{
 }
 
 .activePagesBtn{
-    border-color: #fff !important;
     background-color: var(--orange-pallete-4) !important;
+    color: #fff !important;
 }
 
 #bottomBar{
@@ -437,12 +439,6 @@ a{
 
 .projectCard{
     flex-basis: 250px;
-    border-radius: var(--radius20);
-}
-
-.projectDetailsContainer{
-    box-sizing: border-box;
-    background: linear-gradient(transparent, transparent, var(--orange-pallete-5), var(--orange-pallete-3));
 }
 
 #portfolioImage{
@@ -455,40 +451,29 @@ a{
 
 .projectImageContainer{
     height: 250px;
-    width: 93%;
-    margin: 0 auto;
     background-size: 100% 100%;
     background-blend-mode: lighten;
     border-bottom: none;
-
-    border-radius: var(--radius20);
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: end;
 }
 
 .projectName{
     flex-basis: 100%;
-    background-color: rgba(255,255,255,0.7);
-    color: #000;
+    background-color: var(--gray);
+    color: #fff;
     text-align: center;
     box-sizing: border-box;
-    padding: 20px 0;
+    padding: 15px 0;
     font-weight: bold;
     font-size: var(--H1-2);
-    border-bottom-left-radius: var(--radius20);
-    border-bottom-right-radius: var(--radius20);
-
-    -webkit-backdrop-filter: blur(var(--intensity10x));
-    backdrop-filter: blur(var(--intensity10x));
+    border-top-left-radius: var(--radius20);
+    border-top-right-radius: var(--radius20);
 }
 
 .projectRemark{
     color: #fff;
-    background-color: var(--orange-pallete-3);
+    background-color: var(--gray);
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     border-bottom-left-radius: var(--radius20);
     border-bottom-right-radius: var(--radius20);
 }
@@ -508,13 +493,13 @@ a{
     position: relative;
 
     box-sizing: border-box;
-    background-color: rgba(224, 150, 119, 0.4);
-    border: solid 4px var(--orange-pallete-4);
+    background-color: rgba(224, 212, 132, 0.3);
+    border: solid 4px var(--orange-pallete-5);
     padding: 30px 20px 20px 20px;
 }
 
 .serviceIcon{
-    background-color: var(--orange-pallete-4);
+    background-color: var(--orange-pallete-5);
     color: #fff;
     position: absolute;
     top: -25px;
@@ -539,7 +524,7 @@ a{
     column-gap: 30px;
     row-gap: 50px;
     width: 100%;
-    background-color: rgb(0,0,20);
+    background-color: var(--gray);
 
     box-sizing: border-box;
     padding: 100px 20px 50px 20px;
@@ -614,7 +599,7 @@ a{
 
         display: grid;
         grid-auto-flow: row;
-        grid-template-columns: 1fr 20%;
+        grid-template-columns: 1fr 25%;
         grid-template-rows: auto;
     }
 
@@ -639,5 +624,13 @@ a{
         grid-row: 4;
         justify-self: end;
     }
+
+    #menu{
+        display: none;
+    }
+
+    #aboutSection{
+    margin-top: 20px;
+}
 
 }
