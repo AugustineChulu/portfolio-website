@@ -6,6 +6,7 @@
 	--radius20: 20px;
     --intensity5x: 5px;
 	--intensity10x: 10px;
+    --intensity20x: 20px;
     --intensity30x: 30px;
     --intensity50x: 50px;
 
@@ -35,7 +36,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 12px;
     background: #f7ece1;
 }
 
@@ -46,7 +47,7 @@
 
 @font-face {
 	font-family: plain_text1;
-	src: url("../../fonts/SF\ New\ Republic.ttf");
+	src: url("../../fonts/Righteous-Regular.ttf");
 }
 
 @font-face {
@@ -59,7 +60,7 @@ body{
     margin: 0;
     padding: 0;
     background: #fff;
-    font-size: var(--mobile_default_fontsize);
+    font-size: var(--mobile_default_fontsize) !important;
     
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -160,8 +161,8 @@ a{
 }
 
 .headerContactLink{
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     background-color: #fff;
     color: #000;
     border-radius: 50%;
@@ -178,11 +179,11 @@ a{
     position: sticky;
     z-index: 100;
     top: 0;
-    background-color: rgba(136, 59, 0, 0.4);
+    background-color: rgba(224, 150, 119, 0.4);
     box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.4);
     
-    -webkit-backdrop-filter: blur(var(--intensity30x));
-	backdrop-filter: blur(var(--intensity30x));
+    -webkit-backdrop-filter: blur(var(--intensity20x));
+	backdrop-filter: blur(var(--intensity20x));
     border-bottom-right-radius: var(--radius20);
     border-bottom-left-radius: var(--radius20);
 
@@ -441,7 +442,7 @@ a{
 
 .projectDetailsContainer{
     box-sizing: border-box;
-    background: linear-gradient(transparent, transparent, var(--orange-pallete-5));
+    background: linear-gradient(transparent, transparent, var(--orange-pallete-5), var(--orange-pallete-3));
 }
 
 #portfolioImage{
@@ -460,8 +461,7 @@ a{
     background-blend-mode: lighten;
     border-bottom: none;
 
-    border-top-right-radius: var(--radius20);
-    border-top-left-radius: var(--radius20);
+    border-radius: var(--radius20);
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -477,14 +477,16 @@ a{
     padding: 20px 0;
     font-weight: bold;
     font-size: var(--H1-2);
+    border-bottom-left-radius: var(--radius20);
+    border-bottom-right-radius: var(--radius20);
 
     -webkit-backdrop-filter: blur(var(--intensity10x));
     backdrop-filter: blur(var(--intensity10x));
 }
 
 .projectRemark{
-    color: #000;
-    background-color: var(--orange-pallete-5);
+    color: #fff;
+    background-color: var(--orange-pallete-3);
     text-align: center;
     padding: 10px 0;
     border-bottom-left-radius: var(--radius20);
@@ -506,13 +508,14 @@ a{
     position: relative;
 
     box-sizing: border-box;
+    background-color: rgba(224, 150, 119, 0.4);
     border: solid 4px var(--orange-pallete-4);
     padding: 30px 20px 20px 20px;
 }
 
 .serviceIcon{
-    color: var(--orange-pallete-4);
-    background-color: #fff;
+    background-color: var(--orange-pallete-4);
+    color: #fff;
     position: absolute;
     top: -25px;
     left: 15px;
@@ -523,9 +526,9 @@ a{
 }
 
 .serviceName{
-    color: var(--orange-pallete-4);
+    color: #000;
     font-weight: bold;
-    font-size: var(--H1-1);
+    font-size: var(--H1-2);
     border-radius: var(--radius10);
     padding-bottom: 20px;
     text-align: center;
@@ -601,7 +604,7 @@ a{
 {
 
     body{
-        font-size: var(--desktop_default_fontsize);
+        font-size: var(--desktop_default_fontsize) !important;
     }
 
     #contentContainer{
