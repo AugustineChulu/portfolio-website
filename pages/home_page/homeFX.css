@@ -7,6 +7,7 @@
     --intensity5x: 5px;
 	--intensity10x: 10px;
     --intensity30x: 30px;
+    --intensity50x: 50px;
 
     --mobile_default_fontsize: 0.9rem;
     --desktop_default_fontsize: 1rem;
@@ -24,11 +25,23 @@
     --surface_fill: rgba(255,255,255,0.05);
     --faint_gray: rgba(255,255,255,0.2);
 
-    /*warm sunset colour pallete*/
-    --orange: #FD7F20;
-    --red_orange: #FC2E20;
-    --amber: #FDB750;
-    --yellow: #FBEE0F;
+    /* Color Theme Swatches in RGBA */
+    --orange-pallete-1: rgb(255, 120, 1);
+    --orange-pallete-2: rgba(224, 171, 13, 1);
+    --orange-pallete-3: rgba(224, 154, 38, 1);
+    --orange-pallete-4: rgba(224, 150, 119, 1);
+    --orange-pallete-5: rgba(224, 212, 132, 1);
+
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background: #f7ece1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--orange-pallete-5);
+    border-radius: var(--radius20);
 }
 
 @font-face {
@@ -45,23 +58,14 @@
 body{
     margin: 0;
     padding: 0;
-    background: #000;
+    background: #fff;
     font-size: var(--mobile_default_fontsize);
     
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#rootContainer{
-    font-size: var(--mobile_default_fontsize);
-    background-image: url(../../images/page_background.png);
-}
-
-#backdrop{
-    background-color: var(--background_fill);
-}
-
-#contentContainer{
-    padding-top: 10px;
+.centeredInParent{
+    grid-column: 2;
 }
 
 a{
@@ -90,23 +94,27 @@ a{
 /*OPTIMIZATION CODE FOR LONG SCREENS || PHONES */
 
 #pageHeader{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 100%;
+    background-color: var(--orange-pallete-4);
     justify-content: center;
-    -webkit-backdrop-filter: blur(var(--intensity5x)); 
-	backdrop-filter: blur(var(--intensity5x));
-    border-radius: var(--radius20);
-
+    border-bottom-left-radius: var(--radius20);
+    border-bottom-right-radius: var(--radius20);
     box-sizing: border-box;
+
     border: solid 2px var(--faint_gray);
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 #authorDPContainer{
-    flex-basis: 300px;
-    height: 300px;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 100%;
-    place-items: center;
+    justify-self: center;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 #authorDP{
@@ -125,32 +133,55 @@ a{
     color: #fff;
     text-align: center;
     place-items: center;
-    padding: 0 10px;
+    padding: 0 30px;
 }
 
 #authorSkill{
     display: block;
-    font-weight: bold;
     font-size: var(--H1-4);
 }
 
 #authorName{
     font-family: plain_text1;
-    color: var(--orange);
     display: block;
     font-weight: bold;
     font-size: var(--H2-3);
-    padding: 10px 0;
+    padding-top: 20px;
+}
+
+#contactBubblesContainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+    justify-self: end;
+
+    margin: 20px 20px 0 20px;
+}
+
+.headerContactLink{
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 #menu{
     display: none;
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    z-index: 1;
+    z-index: 100;
     top: 0;
     background-color: rgba(136, 59, 0, 0.4);
-    -webkit-backdrop-filter: blur(var(--intensity20x));
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.4);
+    
+    -webkit-backdrop-filter: blur(var(--intensity30x));
 	backdrop-filter: blur(var(--intensity30x));
     border-bottom-right-radius: var(--radius20);
     border-bottom-left-radius: var(--radius20);
@@ -158,7 +189,6 @@ a{
     box-sizing: border-box;
     border: solid 2px var(--faint_gray);
     border-top: none;
-    padding: 10px 0 15px 0;
 }
 
 #topBar{
@@ -166,9 +196,11 @@ a{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    border-bottom-right-radius: var(--radius20);
+    border-bottom-left-radius: var(--radius20);
 
     box-sizing: border-box;
-    padding: 0 10px;
+    padding: 10px;
 }
 
 #menuAuthorName{
@@ -179,7 +211,7 @@ a{
 }
 
 #pagesBtn{
-    border: solid 4px #fff;
+    border: solid 3px #fff;
     color: #fff;
     font-weight: bold;
     background-color: transparent;
@@ -188,19 +220,22 @@ a{
 }
 
 .activePagesBtn{
-    border-color: var(--orange) !important;
-    background-color: var(--orange) !important;
+    border-color: #fff !important;
+    background-color: var(--orange-pallete-4) !important;
 }
 
 #bottomBar{
     display: none;
     flex-flow: row wrap;
-    justify-content: center;
-    column-gap: 40px;
+    justify-content: space-around;
+    column-gap: 20px;
     row-gap: 10px;
+    background-color: var(--orange-pallete-4);
+    border-bottom-right-radius: var(--radius20);
+    border-bottom-left-radius: var(--radius20);
 
     box-sizing: border-box;
-    padding: 10px 10px 0 10px;
+    padding: 10px;
 }
 
 .visibleBottomBar{
@@ -217,34 +252,56 @@ a{
 }
 
 #pageBody{
-    border-radius: var(--radius20);
-    -webkit-backdrop-filter: blur(var(--intensity5x));
-    backdrop-filter: blur(var(--intensity5x));
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     row-gap: 80px;
-
-    box-sizing: border-box;
-    margin: 10px 0 50px 0;
 }
 
 .section{
+    width: 100%;
     margin: 20px 0;
 }
 
 .sectionTitle{
+    position: relative;
     font-family: plain_text1;
-    color: var(--orange);
+    color: var(--orange-pallete-1);
     font-weight: bold;
     font-size: var(--H1-4);
 
     box-sizing: border-box;
-    padding: 0 10px;
-    margin: 0 10px;
+    padding: 0 20px;
+    margin: 0 10px 20px 10px;
 }
 
+.sectionDescription{
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.titleTxt{
+    background-color: #fff;
+    padding: 0 10px;
+}
+
+  .sectionTitle::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%; /* Adjust the top position to center the line relative to the text */
+    left: 0;
+    width: 100%; /* Make the line span the entire width of the container */
+    height: 2px; /* Adjust the height of the line */
+    background-color: rgba(0, 0, 0, 0.1); /* Set the color of the line */
+    transform: translateY(-50%); /* Center the line vertically */
+  }
+
 .sectionContent{
-    color: #fff;
+    color: #000;
+}
+
+#aboutSection{
+    margin-top: 100px;
 }
 
 #welcomeTxt{
@@ -255,20 +312,37 @@ a{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 20px;
+    row-gap: 50px;
 
     padding: 20px 0;
 }
 
 .skillsCard{
-    flex-basis: 300px;
-    background-color: var(--background_fill);
-    border-radius: var(--radius20);
-    border: solid 1px var(--faint_gray);
+    width: 100%;
+    
+}
 
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
+.cardOverlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.7);
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    place-items: center;
+}
+
+.skillCardDetailsContainer{
+    min-width: 300px;
+    max-width: 80%;
+    -webkit-backdrop-filter: blur(var(--intensity50x));
+	backdrop-filter: blur(var(--intensity50x));
+    background-color: rgba(0,0,0,0.05);
+    border-radius: var(--radius20);
+
+    box-sizing: border-box;
+    margin: 50px 0;
 }
 
 .skillName{
@@ -292,18 +366,17 @@ a{
 }
 
 .pill{
-    background-color: #fff;
+    background-color: #000;
     box-sizing: border-box;
     padding: 5px;
     border-radius: var(--radius20);
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    border: solid 1px var(--orange);
+    border: solid 1px var(--orange-pallete-1);
 }
 
 .skillIcon{
-    display: block;
     height: 30px;
     width: 30px;
     border-radius: var(--radius20);
@@ -311,13 +384,13 @@ a{
 }
 
 .skill{
-    color: var(--orange);
+    color: var(--orange-pallete-1);
     margin: 0 10px;
     font-weight: bold;
 }
 
 .skillDescription{
-    padding: 10px 20px;
+    padding: 20px;
 }
 
 .skillImageContainer{
@@ -328,21 +401,22 @@ a{
     place-items: center;
 }
 
-#webSkillset{
+#webSkillCard{
      background-image: url(../../images/web_skillset_bg.png);
-     background-repeat: repeat-x;
+     background-blend-mode: soft-light;
+     background-repeat: repeat;
      background-size: contain;
 }
 
-#blenderSkillset{
+#blenderSkillCard{
     background-image: url(../../images/3D_modelling_skillset_bg.png);
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-size: contain;
 }
 
-#graphicsSkillset{
+#graphicsSkillCard{
     background-image: url(../../images/graphics_design_skillset_bg.png);
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-size: contain;
 }
 
@@ -357,7 +431,7 @@ a{
     justify-content: center;
     gap: 20px;
 
-    padding: 20px 0;
+    padding: 30px;
 }
 
 .projectCard{
@@ -366,8 +440,8 @@ a{
 }
 
 .projectDetailsContainer{
-    border-radius: var(--radius20);
     box-sizing: border-box;
+    background: linear-gradient(transparent, transparent, var(--orange-pallete-5));
 }
 
 #portfolioImage{
@@ -380,13 +454,14 @@ a{
 
 .projectImageContainer{
     height: 250px;
+    width: 93%;
+    margin: 0 auto;
     background-size: 100% 100%;
     background-blend-mode: lighten;
-    border: solid 3px #fff;
     border-bottom: none;
 
-    border-top-right-radius: inherit;
-    border-top-left-radius: inherit;
+    border-top-right-radius: var(--radius20);
+    border-top-left-radius: var(--radius20);
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -409,7 +484,7 @@ a{
 
 .projectRemark{
     color: #000;
-    background-color: #fff;
+    background-color: var(--orange-pallete-5);
     text-align: center;
     padding: 10px 0;
     border-bottom-left-radius: var(--radius20);
@@ -422,26 +497,25 @@ a{
     justify-content: center;
     gap: 40px;
 
-    padding: 30px 0 20px 0;
+    padding: 30px;
 }
 
 .serviceCard{
     flex-basis: 300px;
     border-radius: var(--radius20);
     position: relative;
-    background-color: var(--background_fill);
 
     box-sizing: border-box;
-    border: solid 4px rgba(255,255,255,1);
-    padding: 40px 20px 20px 20px;
+    border: solid 4px var(--orange-pallete-4);
+    padding: 30px 20px 20px 20px;
 }
 
 .serviceIcon{
-    color: #000;
+    color: var(--orange-pallete-4);
     background-color: #fff;
     position: absolute;
-    top: -15px;
-    left: -15px;
+    top: -25px;
+    left: 15px;
     border-radius: var(--radius10);
 
     box-sizing: border-box;
@@ -449,6 +523,7 @@ a{
 }
 
 .serviceName{
+    color: var(--orange-pallete-4);
     font-weight: bold;
     font-size: var(--H1-1);
     border-radius: var(--radius10);
@@ -464,7 +539,11 @@ a{
     background-color: rgb(0,0,20);
 
     box-sizing: border-box;
-    padding: 100px 10px 100px 10px;
+    padding: 100px 20px 50px 20px;
+    margin-top: 50px;
+
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .footerContentContainer{
@@ -490,10 +569,10 @@ a{
     color: #000;
     font-weight: bold;
     background-color: #fff;
-    border-radius: var(--radius20);
+    border-radius: 100px;
 
     box-sizing: border-box;
-    padding: 4px 6px;
+    padding: 4px 10px;
     margin: 5px 0;
 }
 
@@ -510,30 +589,8 @@ a{
 @media only screen and (min-width: 660px)
 {
 
-    #topBar{
-        padding: 0 20px;
-    }
-
-    #bottomBar{
-        padding: 10px 20px 0 20px;
-    }
-
-    #pageHeader{
-        margin: 0 5%;
-    }
-    
-    #menu{
-        margin: 0 5%;
-    }
-    
-    #pageBody{
-        margin: 10px 5% 50px 5%;
-    }
-
     #pageFooter{
         justify-content: start;
-
-        padding: 100px 5% 100px 5%;
     }
 
 }
@@ -547,26 +604,37 @@ a{
         font-size: var(--desktop_default_fontsize);
     }
 
-    #authorDetails{
-        place-items: start;
-        text-align: start;
+    #contentContainer{
+        height: 100vh;
+        min-height: 300px;
+        overflow-y: auto;
+
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr 20%;
+        grid-template-rows: auto;
+    }
+
+    #pageBody{
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        overflow-y: auto;
     }
 
     #pageHeader{
-        margin: 0 15%;
+        grid-column: 2 !important;
+        grid-template-rows: auto auto 1fr auto;
+        border-radius: 0;
+        align-content: flex-start;
     }
-    
-    #menu{
-        margin: 0 15%;
-    }
-    
-    #pageBody{
-        margin: 10px 15% 50px 15%;
-    }
-    
-    #pageFooter{
-        justify-content: start;
 
-        padding: 100px 15% 100px 15%;
+    #authorDetails{
+        place-items: start;
     }
+
+    #contactBubblesContainer{
+        grid-row: 4;
+        justify-self: end;
+    }
+
 }

@@ -16,9 +16,9 @@
 
         <div id="backdrop">
 
-            <div id="contentContainer">
+            <div id="contentContainer" class="centeredInParent">
 
-                <div id="pageHeader" class="flexRow">
+                <div id="pageHeader" class="centeredInParent">
 
                     <div id="authorDPContainer">
                         <img src="../../images/my_dislplay_picture.png" id="authorDP" alt="augustine chulu" >
@@ -28,21 +28,39 @@
 
                         <p id="authorDetails">
 
-                            <span id="authorSkill">Front-end web developer</span>
+                            <span id="authorSkill">Front-end web developer and graphics designer</span>
 
                             <span id="authorName">Augustine Chulu</span>
-
-                            An undergraduate student majoring in Computer Science at MULUNGUSHI UNIVERSITY,
-                            <br>
-                            front end web developer and graphics designer
 
                         </p>
 
                     </div>
 
+                    <div id="contactBubblesContainer">
+
+                        <a title="gmail" class="headerContactLink" href="mailto:chuluaugustine@gmail.com">
+
+                            <i class="fa-brands fa-google"></i>
+
+                        </a>
+
+                        <a title="facebook" class="headerContactLink" href="https://web.facebook.com/august.chulu/">
+
+                            <i class="fa-brands fa-facebook"></i>
+
+                        </a>
+
+                        <a title="instagram" class="headerContactLink" href="https://www.instagram.com/chuluaugustine/">
+
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+
+                    </div>
+
                 </div>
 
-                <div id="menu">
+                <div id="menu" class="centeredInParent">
 
                     <div id="topBar">
 
@@ -68,15 +86,18 @@
 
                 </div>
 
-                <div id="pageBody">
+                <div id="pageBody" class="centeredInParent">
 
                     <div class="section" id="aboutSection">
 
-                        <span class="sectionTitle">About me</span>
+                        <div class="sectionTitle">
+                            <span class="titleTxt">About me</span>
+                        </div>
 
                         <div class="sectionContent">
 
                             <p id="welcomeTxt">
+                                I am an undergraduate student majoring in Computer Science at MULUNGUSHI UNIVERSITY.
                                 Welcome to my creative world, where code meets design, and innovation 
                                 knows no bounds.With a passion for crafting beautiful user interfaces, 
                                 As a graphic designer armed with Adobe Photoshop and Illustrator, 
@@ -92,155 +113,196 @@
 
                     <div class="section" id="skillsSection">
 
-                        <span class="sectionTitle">Skills</span>
+                        <div class="sectionTitle">
+                            <span class="titleTxt">Skills</span>
+                        </div>
 
                         <div class="sectionContent">
 
                             <div id="skillsContainer">
                                 
-                                <div class="skillsCard">
+                                <div class="skillsCard" id="webSkillCard">
 
-                                    <span class="skillName">
-                                        <i class="fa-solid fa-code skillset_icon"></i>
-                                        &nbsp;
-                                        Web Development
-                                    </span>
+                                    <div class="cardOverlay">
 
-                                    <div class="skills">
+                                        <div class="skillCardDetailsContainer">
 
-                                        <div class="pill">
+                                            <span class="skillName">
+                                            <i class="fa-solid fa-code skillset_icon"></i>
+                                            &nbsp;
+                                            Web Development
+                                            </span>
 
-                                            <!-- <i class="skillIcon"></i> -->
+                                            <div class="skills">
 
-                                            <span class="skill">HTML 5</span>
+                                                <div class="pill">
 
-                                        </div>
+                                                    <img class="skillIcon" src="/images/HTML 5 ICON.png" alt="html5icon"></img>
 
-                                        <div class="pill">
+                                                    <span class="skill">HTML 5</span>
 
-                                            <!-- <i class="skillIcon"></i> -->
+                                                </div>
 
-                                            <span class="skill">CSS 3</span>
+                                                <div class="pill">
 
-                                        </div>
+                                                    <img class="skillIcon" src="/images/CSS3 ICON.png" alt="css3icon"></img>
 
-                                        <div class="pill">
+                                                    <span class="skill">CSS 3</span>
 
-                                            <!-- <i class="skillIcon"></i> -->
+                                                </div>
 
-                                            <span class="skill">JS</span>
+                                                <div class="pill">
+
+                                                    <img class="skillIcon" src="/images/JS ICON.png" alt="jsicon"></img>
+
+                                                    <span class="skill">JS</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <p class="skillDescription">
+
+                                                In the realm of web development and design, I bring a versatile skillset
+                                                to the table. Proficient in HTML, CSS and JavaScript. Beyond coding, my capabilities extend to the visual arts. I'm well-versed in 
+                                                Adobe Photoshop and Adobe Illustrator enabling me to transform concepts into stunning 
+                                                visual designs.
+
+                                            </p>
+
+                                            <!-- <div class="skillImageContainer" id="webSkillset">
+                                                <img class="skillsImage" alt="skill_image" src="../../images/web_skillset.png">
+                                            </div> -->
 
                                         </div>
 
                                     </div>
 
-                                    <p class="skillDescription">
-
-                                        In the realm of web development and design, I bring a versatile skillset
-                                        to the table. Proficient in HTML, CSS and JavaScript. Beyond coding, my capabilities extend to the visual arts. I'm well-versed in 
-                                        Adobe Photoshop and Adobe Illustrator enabling me to transform concepts into stunning 
-                                        visual designs.
-
-                                    </p>
-
-                                    <div class="skillImageContainer" id="webSkillset">
-                                        <img class="skillsImage" alt="skill_image" src="../../images/web_skillset.png">
-                                    </div>
+                                    
 
                                 </div>
 
-                                <div class="skillsCard">
+                                <div class="skillsCard" id="blenderSkillCard">
 
-                                    <span class="skillName">
-                                        <i class="fa-solid fa-cube skillset_icon"></i> 
-                                        &nbsp;
-                                        3D Modelling
-                                    </span>
+                                    <div class="cardOverlay">
 
-                                    <div class="skills">
+                                        <div class="skillCardDetailsContainer">
 
-                                        <div class="pill">
+                                            <span class="skillName">
+                                            <i class="fa-solid fa-cube skillset_icon"></i> 
+                                            &nbsp;
+                                            3D Modelling
+                                            </span>
 
-                                            <!-- <i class="skillIcon"></i> -->
+                                            <div class="skills">
 
-                                            <span class="skill">Hard Surface modelling</span>
+                                                <div class="pill">
+
+                                                    <img class="skillIcon" src="/images/BLENDER ICON.png" alt="blendericon"></img>
+
+                                                    <span class="skill">Hard Surface modelling</span>
+
+                                                </div>
+
+                                                <div class="pill">
+
+                                                    <img class="skillIcon" src="/images/BLENDER ICON.png" alt="blendericon"></img>
+
+                                                    <span class="skill">Product advertising</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <p class="skillDescription">
+
+                                                I do 3D modeling. While I may not be an expert, 
+                                                I've honed my skills and developed a passion for creating 3D wonders. 
+                                                I may not have all the answers, but I'm dedicated to delivering quality results. 
+                                                I bring a fresh perspective to every project and embrace the opportunity to learn 
+                                                and grow with each new challenge. Client satisfaction is my ultimate goal.
+
+                                            </p>
+
+                                            <!-- <div class="skillImageContainer" id="blenderSkillset">
+                                                <img class="skillsImage" alt="skill_image" src="../../images/3D_modelling_skillset.png">
+                                            </div> -->
 
                                         </div>
 
                                     </div>
 
-                                    <p class="skillDescription">
-
-                                        I do 3D modeling. While I may not be an expert, 
-                                        I've honed my skills and developed a passion for creating 3D wonders. 
-                                        I may not have all the answers, but I'm dedicated to delivering quality results. 
-                                        I bring a fresh perspective to every project and embrace the opportunity to learn 
-                                        and grow with each new challenge. Client satisfaction is my ultimate goal.
-
-                                    </p>
-
-                                    <div class="skillImageContainer" id="blenderSkillset">
-                                        <img class="skillsImage" alt="skill_image" src="../../images/3D_modelling_skillset.png">
-                                    </div>
+                                    
 
                                 </div>
 
-                                <div class="skillsCard">
+                                <div class="skillsCard" id="graphicsSkillCard">
 
-                                    <span class="skillName">
-                                        <i class="fa-solid fa-pen-nib skillset_icon"></i>
-                                        &nbsp;
-                                        Graphics Design
-                                    </span>
+                                    <div class="cardOverlay">
 
-                                    <div class="skills">
+                                        <div class="skillCardDetailsContainer">
 
-                                        <div class="pill">
+                                            <span class="skillName">
+                                            <i class="fa-solid fa-pen-nib skillset_icon"></i>
+                                            &nbsp;
+                                            Graphics Design
+                                            </span>
 
-                                            <!-- <i class="skillIcon"></i> -->
+                                            <div class="skills">
 
-                                            <span class="skill">Photo manipulation</span>
+                                                <div class="pill">
 
-                                        </div>
+                                                    <img class="skillIcon" src="/images/PS ICON.png" alt="psicon"></img>
 
-                                        <div class="pill">
+                                                    <span class="skill">Photo manipulation</span>
 
-                                            <!-- <i class="skillIcon"></i> -->
+                                                </div>
 
-                                            <span class="skill">Poster design</span>
+                                                <div class="pill">
 
-                                        </div>
+                                                    <img class="skillIcon" src="/images/PS ICON.png" alt="psicon"></img>
 
-                                        <div class="pill">
+                                                    <span class="skill">Poster design</span>
 
-                                            <!-- <i class="skillIcon"></i> -->
+                                                </div>
 
-                                            <span class="skill">UI/UX design</span>
+                                                <div class="pill">
 
-                                        </div>
+                                                    <img class="skillIcon" src="/images/PS ICON.png" alt="psicon"></img>
 
-                                        <div class="pill">
+                                                    <span class="skill">UI/UX design</span>
 
-                                            <!-- <i class="skillIcon"></i> -->
+                                                </div>
 
-                                            <span class="skill">Logo design</span>
+                                                <div class="pill">
+
+                                                    <img class="skillIcon" src="/images/ILL ICON.png" alt="illicon"></img>
+
+                                                    <span class="skill">Logo design</span>
+
+                                                </div>
+
+                                            </div>
+
+                                            <p class="skillDescription">
+
+                                                My capbilties encompass a range of design disciplines, from logo and branding to web 
+                                                graphics and print materials. I'm a firm believer in the power of visuals to 
+                                                communicate messages, evoke emotions, and leave a lasting impact. I'm dedicated to 
+                                                delivering designs that not only meet but exceed your expectations.
+
+                                            </p>
+
+                                            <!-- <div class="skillImageContainer" id="graphicsSkillset">
+                                                <img class="skillsImage" alt="skill_image" src="../../images/graphics_design_skillset.png">
+                                            </div> -->
 
                                         </div>
 
                                     </div>
 
-                                    <p class="skillDescription">
-
-                                        My capbilties encompass a range of design disciplines, from logo and branding to web 
-                                        graphics and print materials. I'm a firm believer in the power of visuals to 
-                                        communicate messages, evoke emotions, and leave a lasting impact. I'm dedicated to 
-                                        delivering designs that not only meet but exceed your expectations.
-
-                                    </p>
-
-                                    <div class="skillImageContainer" id="graphicsSkillset">
-                                        <img class="skillsImage" alt="skill_image" src="../../images/graphics_design_skillset.png">
-                                    </div>
+                                    
+                                    
 
                                 </div>
 
@@ -252,7 +314,18 @@
 
                     <div class="section" id="projectsSection">
 
-                        <span class="sectionTitle">Projects</span>
+                        <div class="sectionTitle">
+                            <span class="titleTxt">Projects</span>
+                        </div>
+
+                        <p class="sectionDescription">
+                            I have curated a collection of project samples that serve as a comprehensive 
+                            showcase of my professional work. These projects offer an interested party the opportunity to gain insight into 
+                            my skills, creativity, and problem-solving abilities.
+                            Whether exploring web development, design, or other areas of expertise, these projects 
+                            stand as a testament to the quality and innovation that characterize my professional 
+                            contributions.
+                        </p>
 
                         <div class="sectionContent">
 
@@ -300,7 +373,21 @@
 
                     <div class="section" id="servicesSection">
 
-                        <span class="sectionTitle">Services</span>
+                        <div class="sectionTitle">
+                            <span class="titleTxt">Services</span>
+                        </div>
+
+                        <p class="sectionDescription">
+                            I am currently available for new opportunities and eager to contribute my skills 
+                            and expertise to your projects. If you are interested in exploring a collaboration 
+                            or have specific inquiries, my contact information is readily accessible 
+                            <a href="#pageFooter" class="word_link">here.</a>
+                            <br>
+                            Feel free to reach out through the provided channels, and I will respond 
+                            promptly to discuss how I can bring value to your team or project. I am 
+                            open to discussions about potential collaborations, freelance work, or 
+                            employment opportunities. I offer the sservices bellow, looking forward to connecting with you.
+                        </p>
 
                         <div class="sectionContent">
 
@@ -356,7 +443,7 @@
                                     <div class="serviceName">3D Modelling</div>
                                         
                                     <div class="serviceDetails">
-                                        From character models to architectural renderings and more, I approach each 
+                                        From brand and logo designs and renderings to architectural renderings and more, I approach each 
                                         project with enthusiasm and a willingness to explore new ideas. If you're 
                                         looking for someone who's passionate, creative, and committed to your vision, 
                                         let's chat about your next 3D project.
@@ -370,68 +457,85 @@
                         
                     </div>
 
-                </div>
+                    <div id="pageFooter">
 
-                <div id="pageFooter" class="flexRow">
+                        <div id="contactsSection" class="footerContentContainer">
 
-                    <div id="contactsSection" class="footerContentContainer">
+                            <div class="FCCheader" >
+                                <!-- <i class="fa-solid fa-address-card"></i>
+                                &nbsp; -->
+                                Augustine Chulu®
+                            </div>
 
-                        <div class="FCCheader" >
-                            <!-- <i class="fa-solid fa-address-card"></i>
-                            &nbsp; -->
-                            Contacts
-                        </div>
+                            <div class="FCCbody">
 
-                        <div class="FCCbody">
-
-                            <a id="email_link" class="contactLink" href="mailto:chuluaugustine@gmail.com">
-
-                                <i class="fa-brands fa-google"></i>
-                                <span class="account_name">chuluaugustine@gmail.com</span>
-
-                            </a>
-
-                            <a id="facebook_link" class="contactLink" href="https://web.facebook.com/august.chulu/">
-
-                                <i class="fa-brands fa-facebook-messenger"></i>
-                                <span class="account_name">August Chulu</span>
-
-                            </a>
-
-                            <a id="instagram_link" class="contactLink" href="https://www.instagram.com/chuluaugustine/">
-
-                                <i class="fa-brands fa-instagram"></i>
-                                <span class="account_name">August Chulu</span>
-
-                            </a>
+                            </div>
 
                         </div>
+
+                        <div id="contactsSection" class="footerContentContainer">
+
+                            <div class="FCCheader" >
+                                <!-- <i class="fa-solid fa-address-card"></i>
+                                &nbsp; -->
+                                Contact
+                            </div>
+
+                            <div class="FCCbody">
+
+                                <a id="email_link" class="contactLink" href="mailto:chuluaugustine@gmail.com">
+
+                                    <i class="fa-brands fa-google"></i>
+                                    &nbsp;
+                                    <span class="account_name">chuluaugustine@gmail.com</span>
+
+                                </a>
+
+                                <a id="facebook_link" class="contactLink" href="https://web.facebook.com/august.chulu/">
+
+                                    <i class="fa-brands fa-facebook"></i>
+                                    &nbsp;
+                                    <span class="account_name">August Chulu</span>
+
+                                </a>
+
+                                <a id="instagram_link" class="contactLink" href="https://www.instagram.com/chuluaugustine/">
+
+                                    <i class="fa-brands fa-instagram"></i>
+                                    &nbsp;
+                                    <span class="account_name">August Chulu</span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div id="menuSection" class="footerContentContainer">
+
+                            <div class="FCCheader">
+                                <!-- <i class="fa-solid fa-bars"></i>
+                                &nbsp; -->
+                                Menu
+                            </div>
+
+                            <div class="FCCbody">
+
+                                <a href="#aboutSection" class="sectionLink footer">About</a>
+
+                                <a href="#skillsSection" class="sectionLink footer">Skills</a>
+                
+                                <a href="#projectsSection" class="sectionLink footer">Projects</a>
+                
+                                <a href="#servicesSection" class="sectionLink footer">Services</a>
+
+                            </div>
+
+                        </div>
+
+                        <span id="copyright_txt" >Copyright © 2023 | Augustine Chulu®. All Rights Reserved</span>
 
                     </div>
-
-                    <div id="menuSection" class="footerContentContainer">
-
-                        <div class="FCCheader">
-                            <!-- <i class="fa-solid fa-bars"></i>
-                            &nbsp; -->
-                            Menu
-                        </div>
-
-                        <div class="FCCbody">
-
-                            <a href="#aboutSection" class="sectionLink footer">About</a>
-
-                            <a href="#skillsSection" class="sectionLink footer">Skills</a>
-            
-                            <a href="#projectsSection" class="sectionLink footer">Projects</a>
-            
-                            <a href="#servicesSection" class="sectionLink footer">Services</a>
-
-                        </div>
-
-                    </div>
-
-                    <span id="copyright_txt" >Copyright © 2023 | Augustine Chulu®. All Rights Reserved</span>
 
                 </div>
 
