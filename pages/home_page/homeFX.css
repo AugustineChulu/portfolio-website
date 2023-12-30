@@ -96,23 +96,28 @@ a{
 /*OPTIMIZATION CODE FOR LONG SCREENS || PHONES */
 
 #pageHeader{
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-columns: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
     background-color: var(--orange-pallete-4);
-    justify-content: center;
+    background-image: url(../../images/page_background.png);
+    background-repeat: repeat;
     border-bottom-left-radius: var(--radius20);
     border-bottom-right-radius: var(--radius20);
     box-sizing: border-box;
 
     border: solid 2px var(--faint_gray);
-    padding: 20px 0;
+    padding-bottom: 20px;
+}
+
+#authorDetailsWrapper{
+    width: 100%;
 }
 
 #authorDPContainer{
     justify-self: center;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -120,7 +125,7 @@ a{
 }
 
 #authorDP{
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
@@ -140,6 +145,8 @@ a{
 
 #authorSkill{
     font-size: var(--H1-4);
+    width: 100%;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -149,6 +156,8 @@ a{
     text-align: center;
     font-size: var(--H2-3);
     padding-top: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 #contactBubblesContainer{
@@ -560,7 +569,7 @@ a{
     border-radius: 100px;
 
     box-sizing: border-box;
-    padding: 4px 10px;
+    padding: 5px 10px;
     margin: 5px 0;
 }
 
@@ -611,18 +620,22 @@ a{
 
     #pageHeader{
         grid-column: 2 !important;
-        grid-template-rows: auto auto 1fr auto;
-        border-radius: 0;
-        align-content: flex-start;
+        border-radius: 0 !important;
+        height: 100% !important;
     }
 
     #authorDetails{
         place-items: start;
     }
 
+    #authorDPContainer{
+        width: 250px;
+    }
+
     #contactBubblesContainer{
-        grid-row: 4;
-        justify-self: end;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-end;
     }
 
     #menu{
@@ -631,6 +644,6 @@ a{
 
     #aboutSection{
     margin-top: 20px;
-}
+    }
 
 }
