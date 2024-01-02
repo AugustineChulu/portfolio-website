@@ -322,7 +322,11 @@ a{
     position: relative;
     width: 100%;
     border-left: solid 3px rgba(255, 136, 0, 0.3);
-    padding: 20px 0 40px 5px;
+    padding-bottom: 70px;
+}
+
+#graphicsSkillCard{
+    padding-bottom: 0;
 }
 
 .cardDot {
@@ -331,7 +335,6 @@ a{
     height: 13px;
     border-radius: 50%;
     left: -11px;
-    top: 24px;
     border: solid 3px var(--orange-pallete-1);
     background-color: #fff;
   }
@@ -379,7 +382,7 @@ a{
 .pill{
     width: -moz-fit-content;
     width: fit-content;
-    background-color: rgba(181, 224, 38, 0.5);
+    background-color: var(--gray);
     box-sizing: border-box;
     padding: 3px;
     margin: 5px 0;
@@ -408,8 +411,8 @@ a{
 }
 
 .skill{
-    color: #000;
-    margin: 0 10px;
+    color: #fff;
+    margin: 0 15px;
     font-weight: bold;
 }
 
@@ -450,7 +453,7 @@ a{
     width: 250px;
 }
 
-#projectsSection{
+/* #projectsSection{
     background-color: var(--gray);
 }
 
@@ -461,7 +464,7 @@ a{
 
 #projectSectionDescription{
     color: #fff;
-}
+} */
 
 #projectsContainer{
     display: flex;
@@ -482,12 +485,16 @@ a{
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: bottom;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+    border-bottom-left-radius: var(--radius10);
+    border-bottom-right-radius: var(--radius10);
 }
 
 .projecCardOverlay{
     height: 100%;
     border-radius: inherit;
-    background-color: rgba(181, 224, 38, 0.7);
+    background-color: rgba(181, 224, 38, 0.8);
     
     box-sizing: border-box;
     padding-bottom: 300px;
@@ -502,7 +509,7 @@ a{
 }
 
 .projectName{
-    color: #fff;
+    color: #000;
     text-align: center;
     font-weight: bold;
     font-size: var(--H1-4);
@@ -513,7 +520,7 @@ a{
 
 .projectCardDetails{
     grid-row: 1;
-    color: #fff;
+    color: #000;
     text-align: center;
 
     box-sizing: border-box;
