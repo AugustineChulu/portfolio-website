@@ -187,11 +187,11 @@ a{
     position: sticky;
     z-index: 100;
     top: 0;
-    background-color: rgba(224, 150, 119, 0.5);
+    background-color: rgba(255, 136, 0, 0.7);
     box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.4);
     
-    -webkit-backdrop-filter: blur(var(--intensity20x));
-	backdrop-filter: blur(var(--intensity20x));
+    -webkit-backdrop-filter: blur(var(--intensity5x));
+	backdrop-filter: blur(var(--intensity5x));
     border-bottom-right-radius: var(--radius20);
     border-bottom-left-radius: var(--radius20);
 
@@ -237,8 +237,8 @@ a{
 #bottomBar{
     display: none;
     flex-flow: row wrap;
-    justify-content: space-around;
-    column-gap: 20px;
+    justify-content: center;
+    column-gap: 40px;
     row-gap: 10px;
     background-color: var(--orange-pallete-1);
     border-bottom-right-radius: var(--radius20);
@@ -288,7 +288,6 @@ a{
 }
 
 .titleTxt{
-    background-color: #fff;
     padding: 0 10px;
 }
 
@@ -296,15 +295,13 @@ a{
     color: #000;
 }
 
-/* #aboutSection{
-    padding-top: 100px;
+#skillsSection{
     background-color: var(--light_gray);
 }
 
-#aboutSectionTitle{
+#servicesSection{
     background-color: var(--light_gray);
 }
-*/
 
 #welcomeTxt{
     padding: 0 20px;
@@ -480,11 +477,11 @@ a{
     min-height: 300px;
 
     box-sizing: border-box;
-    border-top: solid 20px var(--orange-pallete-4);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: bottom;
+    border-top: solid 20px #000;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 
     border-bottom-left-radius: var(--radius10);
@@ -494,7 +491,7 @@ a{
 .projecCardOverlay{
     height: 100%;
     border-radius: inherit;
-    background-color: rgba(181, 224, 38, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     
     box-sizing: border-box;
     padding-bottom: 300px;
@@ -509,7 +506,7 @@ a{
 }
 
 .projectName{
-    color: #000;
+    color: #fff;
     text-align: center;
     font-weight: bold;
     font-size: var(--H1-4);
@@ -520,7 +517,7 @@ a{
 
 .projectCardDetails{
     grid-row: 1;
-    color: #000;
+    color: #fff;
     text-align: center;
 
     box-sizing: border-box;
@@ -600,8 +597,7 @@ a{
     background-color: var(--gray);
 
     box-sizing: border-box;
-    padding: 100px 20px 20px 20px;
-    margin-top: 50px;
+    padding: 100px 20px 40px 20px;
 
     display: flex;
     flex-flow: row wrap;
