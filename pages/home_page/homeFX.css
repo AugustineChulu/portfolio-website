@@ -463,13 +463,26 @@ a{
     color: #fff;
 } */
 
-#projectsContainer{
+.projectTypeContainer{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 50px;
 
-    padding: 30px 10px;
+    padding: 0 30px 100px 30px;
+}
+
+.projectTypeTitle{
+    color: #ccc;
+    font-size: var(--H1-2);
+    box-sizing: border-box;
+    margin: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px #ccc;
+
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
 }
 
 .projectCard{
@@ -524,13 +537,32 @@ a{
     padding: 0 20px 20px 20px;
 }
 
-#servicesContainer{
+/* #servicesContainer{
+    box-sizing: border-box;
+    padding: 50px 30px 40px 30px;
+} */
+
+.serviceTypeContainer{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 60px;
 
-    padding: 50px 30px 40px 30px;
+    box-sizing: border-box;
+    padding: 30px 30px 100px 30px;
+}
+
+.serviceTypeTitle{
+    color: #ccc;
+    font-size: var(--H1-2);
+    box-sizing: border-box;
+    margin: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid 2px #ccc;
+
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
 }
 
 .serviceCard{
@@ -551,8 +583,8 @@ a{
     color: var(--orange-pallete-5);
     background-color: #fff;
     position: absolute;
-    top: -25px;
-    left: -25px;
+    top: -20px;
+    left: -20px;
 
     box-sizing: border-box;
     padding: 15px;
@@ -657,6 +689,18 @@ a{
     
     .projecCardOverlay{
         padding-bottom: 250px;
+    }
+
+    #projectsContainer{
+        justify-content: start;
+    }
+
+    .projectTypeContainer{
+        justify-content: start;
+    }
+
+    .serviceTypeContainer{
+        justify-content: start;
     }
 
     #pageFooter{
