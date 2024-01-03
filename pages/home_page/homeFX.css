@@ -468,17 +468,20 @@ a{
     flex-flow: row wrap;
     justify-content: center;
     gap: 50px;
+    background: linear-gradient(#ddd, transparent, transparent);
 
+    box-sizing: border-box;
     padding: 0 30px 100px 30px;
 }
 
 .projectTypeTitle{
-    color: #ccc;
+    color: #fff;
+    background-color: #ddd;
     font-size: var(--H1-2);
     box-sizing: border-box;
-    margin: 20px;
-    padding-bottom: 10px;
-    border-bottom: solid 2px #ccc;
+    padding: 10px 20px 20px 20px;
+    border-top-right-radius: var(--radius10);
+    border-top-left-radius: var(--radius10);
 
     display: flex;
     flex-flow: row wrap;
@@ -546,19 +549,21 @@ a{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    gap: 60px;
+    gap: 50px;
+    background: linear-gradient(#ddd, transparent, transparent);
 
     box-sizing: border-box;
     padding: 30px 30px 100px 30px;
 }
 
 .serviceTypeTitle{
-    color: #ccc;
+    color: #fff;
+    background-color: #ddd;
     font-size: var(--H1-2);
     box-sizing: border-box;
-    margin: 20px;
-    padding-bottom: 10px;
-    border-bottom: solid 2px #ccc;
+    padding: 10px 20px 20px 20px;
+    border-top-right-radius: var(--radius10);
+    border-top-left-radius: var(--radius10);
 
     display: flex;
     flex-flow: row wrap;
