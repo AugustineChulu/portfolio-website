@@ -472,14 +472,18 @@ a{
 
     box-sizing: border-box;
     padding: 0 30px 100px 30px;
+    margin: 0 10px;
 }
 
 .projectTypeTitle{
     color: #fff;
     background-color: #ddd;
     font-size: var(--H1-2);
+
     box-sizing: border-box;
     padding: 10px 20px 20px 20px;
+    margin: 0 10px;
+
     border-top-right-radius: var(--radius10);
     border-top-left-radius: var(--radius10);
 
@@ -554,14 +558,18 @@ a{
 
     box-sizing: border-box;
     padding: 30px 30px 100px 30px;
+    margin: 0 10px;
 }
 
 .serviceTypeTitle{
     color: #fff;
     background-color: #ddd;
     font-size: var(--H1-2);
+
     box-sizing: border-box;
     padding: 10px 20px 20px 20px;
+    margin: 0 10px;
+    
     border-top-right-radius: var(--radius10);
     border-top-left-radius: var(--radius10);
 
@@ -702,10 +710,20 @@ a{
 
     .projectTypeContainer{
         justify-content: start;
+        margin: 0;
+    }
+
+    .projectTypeTitle{
+        margin: 0;
     }
 
     .serviceTypeContainer{
         justify-content: start;
+        margin: 0;
+    }
+
+    .serviceTypeTitle{
+        margin: 0;
     }
 
     #pageFooter{
