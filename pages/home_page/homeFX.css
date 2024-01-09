@@ -27,7 +27,7 @@
     --gray: #333;
 
     /* Color Theme Swatches in RGBA */
-    --orange-pallete-1: rgb(255, 136, 0);
+    --orange-pallete-1: rgb(255, 153, 0);
     --orange-pallete-2: rgba(224, 192, 38, 1);
     --orange-pallete-3: rgba(224, 214, 38, 1);
     --orange-pallete-4: rgba(181, 224, 38, 1);
@@ -36,7 +36,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
     background: #f7ece1;
 }
 
@@ -57,12 +57,18 @@
 
 
 body{
+    min-width: 300px;
     margin: 0;
     padding: 0;
-    background: #fff;
     font-size: var(--mobile_default_fontsize) !important;
+
+    background-color: var(--orange-pallete-1);
+    background-image: url(../../images/page_background.png);
+    background-repeat: repeat;
+    -webkit-backdrop-filter: blur(1px);
+	backdrop-filter: blur(1px);
     
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: arial,sans-serif;
 }
 
 .centeredInParent{
@@ -98,9 +104,6 @@ a{
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    background-color: var(--orange-pallete-1);
-    background-image: url(../../images/page_background.png);
-    background-repeat: repeat;
     border-bottom-left-radius: var(--radius20);
     border-bottom-right-radius: var(--radius20);
     box-sizing: border-box;
@@ -113,7 +116,7 @@ a{
 
 #authorDPContainer{
     justify-self: center;
-    width: 300px;
+    width: 60%;
     margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
@@ -141,7 +144,7 @@ a{
 }
 
 #authorSkill{
-    font-size: var(--H1-4);
+    font-size: var(--H1-2);
     width: 100%;
     padding-top: 10px;
     text-align: center;
@@ -151,7 +154,7 @@ a{
     font-family: plain_text1;
     font-weight: bold;
     text-align: center;
-    font-size: var(--H2-3);
+    font-size: var(--H2);
     padding-top: 20px;
     width: 100%;
     text-align: center;
@@ -264,11 +267,13 @@ a{
 #pageBody{
     display: flex;
     flex-flow: row wrap;
+    background-color: #fff;
 }
 
 .section{
     width: 100%;
-    padding: 50px 0;
+    box-sizing: border-box;
+    padding: 50px 4%;
 }
 
 .sectionTitle{
@@ -276,19 +281,10 @@ a{
     font-family: plain_text1;
     color: #000;
     font-weight: bold;
-    font-size: var(--H1-5);
+    font-size: var(--H1-4);
 
     box-sizing: border-box;
-    margin: 0 10px 20px 10px;
-}
-
-.sectionDescription{
-    box-sizing: border-box;
-    padding: 0 20px;
-}
-
-.titleTxt{
-    padding: 0 10px;
+    margin-bottom: 20px;
 }
 
 .sectionContent{
@@ -303,16 +299,10 @@ a{
     background-color: var(--light_gray);
 }
 
-#welcomeTxt{
-    padding: 0 20px;
-}
-
 #skillsContainer{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-
-    padding: 20px;
 }
 
 .skillsCard{
@@ -363,7 +353,7 @@ a{
     color: var(--orange-pallete-1);
 
     display: block;
-    font-size: var(--H1-2);
+    font-size: var(--H1-1);
     font-weight: bold;
     text-align: center;
     padding-left: 20px;
@@ -399,12 +389,12 @@ a{
     flex-flow: row wrap;
     box-sizing: border-box;
     gap: 10px;
-    padding: 10px;
+    padding: 6px;
 }
 
 .skillIcon{
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
 }
 
 .skill{
@@ -463,6 +453,10 @@ a{
     color: #fff;
 } */
 
+#projectsContainer{
+    padding-top: 30px;
+}
+
 .projectTypeContainer{
     display: flex;
     flex-flow: row wrap;
@@ -472,7 +466,6 @@ a{
 
     box-sizing: border-box;
     padding: 0 30px 100px 30px;
-    margin: 0 10px;
 }
 
 .projectTypeTitle{
@@ -481,8 +474,7 @@ a{
     font-size: var(--H1-2);
 
     box-sizing: border-box;
-    padding: 10px 20px 20px 20px;
-    margin: 0 10px;
+    padding: 20px;
 
     border-top-right-radius: var(--radius10);
     border-top-left-radius: var(--radius10);
@@ -549,6 +541,10 @@ a{
     padding: 50px 30px 40px 30px;
 } */
 
+#servicesContainer{
+    padding-top: 30px;
+}
+
 .serviceTypeContainer{
     display: flex;
     flex-flow: row wrap;
@@ -558,7 +554,6 @@ a{
 
     box-sizing: border-box;
     padding: 30px 30px 100px 30px;
-    margin: 0 10px;
 }
 
 .serviceTypeTitle{
@@ -568,7 +563,6 @@ a{
 
     box-sizing: border-box;
     padding: 10px 20px 20px 20px;
-    margin: 0 10px;
     
     border-top-right-radius: var(--radius10);
     border-top-left-radius: var(--radius10);
@@ -650,14 +644,14 @@ a{
 }
 
 .footerContentContainer{
-    width: 300px;
+    width: 250px;
 }
 
 .FCCheader{
     font-family: plain_text1;
     font-size: var(--H1-5);
     font-weight: bold;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.4);
 }
 
 .FCCbody{
@@ -668,9 +662,9 @@ a{
     display: block;
     width: -moz-fit-content;
     width: fit-content;
-    color: #000;
+    color: #fff;
     font-weight: bold;
-    background-color: #fff;
+    background-color: var(--faint_gray);
     border-radius: 100px;
 
     box-sizing: border-box;
@@ -680,6 +674,7 @@ a{
 
 .footer{
     display: block;
+    font-size: var(--mobile_default_fontsize) !important;
 }
 
 #copyright_txt{
@@ -710,20 +705,10 @@ a{
 
     .projectTypeContainer{
         justify-content: start;
-        margin: 0;
-    }
-
-    .projectTypeTitle{
-        margin: 0;
     }
 
     .serviceTypeContainer{
         justify-content: start;
-        margin: 0;
-    }
-
-    .serviceTypeTitle{
-        margin: 0;
     }
 
     #pageFooter{
@@ -737,9 +722,9 @@ a{
 @media only screen and (min-width: 1000px)
 {
 
-    body{
+    /* body{
         font-size: var(--desktop_default_fontsize) !important;
-    }
+    } */
 
     #contentContainer{
         height: 100vh;
@@ -749,27 +734,27 @@ a{
         display: grid;
         grid-auto-flow: row;
         grid-template-columns: 20% 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: auto 1fr;
     }
 
     #pageBody{
         grid-column: 2 !important;
-        grid-row: 1 !important;
+        grid-row: 2 !important;
         overflow-y: auto;
+
+        border-top-left-radius: var(--radius10);
     }
 
     #pageHeader{
+        justify-content: center !important;
         grid-column: 1 !important;
+        grid-row: 1/3 !important;
         border-radius: 0 !important;
         height: 100% !important;
     }
 
     #authorDetails{
         place-items: start;
-    }
-
-    #authorDPContainer{
-        width: 250px;
     }
 
     #contactBubblesContainer{
@@ -779,7 +764,24 @@ a{
     }
 
     #menu{
-        display: none;
+        position: static;
+        opacity: 1 !important;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        border-radius: 0;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    #topBar{
+        display: none !important;
+    }
+
+    #bottomBar{
+        display: flex !important;
+        background-color: transparent;
+        column-gap: 60px;
     }
 
     .section{
