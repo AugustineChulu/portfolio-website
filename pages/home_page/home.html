@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/x-icon" href="../../images/favicon.jpg">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.png">
 
     <link rel="stylesheet" href="homeFX.css">
 
@@ -16,65 +16,59 @@
 
         <div id="backdrop">
 
-            <div id="contentContainer" class="centeredInParent">
+            <div id="contentContainer" >
 
                 <div id="pageHeader" class="centeredInParent">
 
-                    <div id="authorDetailsWrapper">
+                    <img src="../../images/my_dislplay_picture2.png" id="authorDP" alt="augustine chulu" >
 
-                        <div id="authorDPContainer">
-                        <img src="../../images/my_dislplay_picture2.png" id="authorDP" alt="augustine chulu" >
-                        </div>
+                    <div id="headerContent">
 
                         <div id="authorDetailsContainer">
 
-                            <div id="authorDetails">
+                            <div id="greeting">Hello, I am</div>
 
-                                <div id="authorSkill">Front-end web developer and graphics designer</div>
+                            <div id="authorName">AUGUSTINE <br> CHULU</div>
 
-                                <div id="authorName">Augustine Chulu</div>
+                            <div id="authorSkill">front-end web developer and graphics designer</div>
 
+                            <div id="contactBubblesContainer">
+
+                                <a title="gmail" class="headerBubble" href="mailto:chuluaugustine@gmail.com">
+        
+                                    <i class="fa-brands fa-google icon"></i>
+        
+                                </a>
+        
+                                <a title="facebook" class="headerBubble" href="https://web.facebook.com/august.chulu/">
+        
+                                    <i class="fa-brands fa-facebook icon"></i>
+        
+                                </a>
+        
+                                <a title="instagram" class="headerBubble" href="https://www.instagram.com/chuluaugustine/">
+        
+                                    <i class="fa-brands fa-instagram icon"></i>
+        
+                                </a>
+        
                             </div>
 
                         </div>
 
                     </div>
 
-                    <div id="contactBubblesContainer">
-
-                        <a title="gmail" class="headerContactLink" href="mailto:chuluaugustine@gmail.com">
-
-                            <i class="fa-brands fa-google"></i>
-
-                        </a>
-
-                        <a title="facebook" class="headerContactLink" href="https://web.facebook.com/august.chulu/">
-
-                            <i class="fa-brands fa-facebook"></i>
-
-                        </a>
-
-                        <a title="instagram" class="headerContactLink" href="https://www.instagram.com/chuluaugustine/">
-
-                            <i class="fa-brands fa-instagram"></i>
-
-                        </a>
-
-                    </div>
-
                 </div>
 
                 <div id="menu" class="centeredInParent">
+                    
+                    <button id="sectionsBtn" title="sections button" type="button">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
 
-                    <div id="topBar">
+                    <img alt="logo" id="menuLogo" src="../../images/branding.png"></img>
 
-                        <a id="menuAuthorName" href="#authorDetailsWrapper">Augustine Chulu</a>
-
-                        <button id="pagesBtn" title="pagesBtn" type="button">sections</button>
-
-                    </div>
-
-                    <div id="bottomBar">
+                    <div id="menuTray" class="movableTray">
 
                         <a href="#aboutSection" class="sectionLink">
                             <i class="fa-regular fa-circle-user"></i>
@@ -96,7 +90,7 @@
                             Services
                         </a>
 
-                        <a href="#contactsSection" class="sectionLink">
+                        <a href="#pageFooter" class="sectionLink">
                             <i class="fa-solid fa-phone"></i>
                             Contact
                         </a>
@@ -107,10 +101,12 @@
 
                 <div id="pageBody" class="centeredInParent">
 
-                    <div class="section" id="aboutSection">
+                    <div class="section smoothscroll" id="aboutSection">
 
                         <div class="sectionTitle">
-                            <span class="titleTxt" id="aboutSectionTitle">About me</span>
+                            <span class="titleTxt" id="aboutSectionTitle">
+                                <i class="fa-regular fa-circle-user sectionIcon"></i>ABOUT ME
+                            </span>
                         </div>
 
                         <div class="sectionContent">
@@ -130,10 +126,12 @@
                         
                     </div>
 
-                    <div class="section" id="skillsSection">
+                    <div class="section smoothscroll" id="skillsSection">
 
                         <div class="sectionTitle">
-                            <span class="titleTxt">Skills</span>
+                            <span class="titleTxt">
+                                <i class="fa-regular fa-circle-check sectionIcon"></i>MY SKILLS
+                            </span>
                         </div>
 
                         <div class="sectionContent">
@@ -188,14 +186,14 @@
 
                                             </div>
 
-                                            <p class="skillDescription">
+                                            <span class="skillDescription">
 
                                                 In the realm of web development and design, I bring a versatile skillset
                                                 to the table. Proficient in HTML, CSS and JavaScript. Beyond coding, my capabilities extend to the visual arts. I'm well-versed in 
                                                 Adobe Photoshop and Adobe Illustrator enabling me to transform concepts into stunning 
                                                 visual designs.
 
-                                            </p>
+                                            </span>
 
                                         </div>
 
@@ -233,7 +231,7 @@
 
                                             </div>
 
-                                            <p class="skillDescription">
+                                            <span class="skillDescription">
 
                                                 I do 3D modeling. While I may not be an expert, 
                                                 I've honed my skills and developed a passion for creating 3D wonders. 
@@ -241,7 +239,7 @@
                                                 I bring a fresh perspective to every project and embrace the opportunity to learn 
                                                 and grow with each new challenge. Client satisfaction is my ultimate goal.
 
-                                            </p>
+                                            </span>
 
                                         </div>
 
@@ -289,14 +287,14 @@
 
                                             </div>
 
-                                            <p class="skillDescription">
+                                            <span class="skillDescription">
 
                                                 My capbilties encompass a range of design disciplines, from logo and branding to web 
                                                 graphics and print materials. I'm a firm believer in the power of visuals to 
                                                 communicate messages, evoke emotions, and leave a lasting impact. I'm dedicated to 
                                                 delivering designs that not only meet but exceed your expectations.
 
-                                            </p>
+                                            </span>
 
                                         </div>
 
@@ -313,10 +311,12 @@
                         
                     </div>
 
-                    <div class="section" id="projectsSection">
+                    <div class="section smoothscroll" id="projectsSection">
 
                         <div class="sectionTitle">
-                            <span class="titleTxt" id="projectsSectionTitle">Projects</span>
+                            <span class="titleTxt" id="projectsSectionTitle">
+                                <i class="fa-solid fa-laptop-code sectionIcon"></i>MY PROJECTS
+                            </span>
                         </div>
 
                         <p class="sectionDescription" id="projectSectionDescription">
@@ -332,56 +332,116 @@
 
                             <div id="projectsContainer">
 
-                                <div class="projectTypeTitle">
-                                    <div class="typeIcon"><i class="fa-solid fa-circle-chevron-right"></i></div>
-                                    Web
-                                </div>
+                                <div class="project">
 
-                                <div class="projectTypeContainer">
+                                    <div class="projectTypeTitle">
+                                        <div class="projectTrayIcon">
+                                           
+                                            <span class="trayTxt">
+                                                Web
+                                            </span>
 
-                                    <div class="projectCard" id="portfolioWebpage">
+                                        </div>
+                                    </div>
 
-                                        <div class="projecCardOverlay">
+                                    <div class="projectTypeContainer">
 
-                                            <div class="projectName">Portfolio website</div>
+                                        <div class="projectCard" id="portfolioWebpage">
 
-                                            <div class="projectCardDetails">
-                                                thank you for vsiting
+                                            <div class="projectDetails">
+                                                    
+                                                <div class="projectTitle">PORTFOLIO<br>WEBSITE</div>
+                                                thank you for vsiting 
+                                            
                                             </div>
+
+                                            <div class="projectLinksContainer">
+
+                                                <a title="visit" class="projectBubble">
+                        
+                                                    <i class="fa-solid fa-paper-plane"></i>
+                        
+                                                </a>
+                        
+                                            </div>
+
+                                            <img alt="portfolioWebpage" class="projectImg" src="../../images/portfolio_card_dp.jpg">
 
                                         </div>
 
+                                        <div class="projectCard" id="portfolioWebpage"></div>
+
+                                        <div class="projectCard" id="portfolioWebpage"></div>
+
+                                        <div class="projectCard" id="portfolioWebpage"></div>
+
+                                    </div>
+
+                                </div>
+
+                                
+                                <div class="project">
+
+                                    <div class="projectTypeTitle">
+                                        <div class="projectTrayIcon">
+
+                                            <span class="trayTxt">
+                                                Graphics
+                                            </span>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="projectTypeContainer">
+
+                                        <div class="projectCard" id="portfolioWebpage">
+
+                                            <div class="projectDetails">
+                                                    
+                                                <div class="projectTitle">DIGITAL<br>ART</div>
+                                                visit my instagram 
+                                            
+                                            </div>
+
+                                            <div class="projectLinksContainer">
+
+                                                <a title="visit" class="projectBubble" href="https://www.instagram.com/chuluaugustine/">
+                        
+                                                    <i class="fa-solid fa-paper-plane"></i>
+                        
+                                                </a>
+                        
+                                            </div>
+
+                                            <img alt="portfolioWebpage" class="projectImg" src="../../images/graphics_design_card_dp.jpg">
+
+                                        </div>
+
+                                        <div class="projectCard" id="portfolioWebpage"></div>
+
+                                        <div class="projectCard" id="portfolioWebpage"></div>
+
+                                        <div class="projectCard" id="portfolioWebpage"></div>
+                                        
                                     </div>
 
                                 </div>
                                 
-                                <div class="projectTypeTitle">
-                                    <div class="typeIcon"><i class="fa-solid fa-circle-chevron-right"></i></div>
-                                    Graphics
-                                </div>
 
-                                <div class="projectTypeContainer">
+                                <div class="project">
 
-                                    <div class="projectCard" id="digitalArtwork">
-
-                                        <div class="projecCardOverlay">
-
-                                            <div class="projectName">Digital art work</div>
-
-                                            <div class="projectCardDetails">
-                                                visit my instagram <a href="https://www.instagram.com/chuluaugustine/" class="word_link">here</a>
-                                            </div>
+                                    <div class="projectTypeTitle">
+                                        <div class="projectTrayIcon">
+                                            
+                                            <span class="trayTxt">
+                                                3D
+                                            </span>
 
                                         </div>
-
                                     </div>
 
                                 </div>
-
-                                <div class="projectTypeTitle">
-                                    <div class="typeIcon"><i class="fa-solid fa-circle-chevron-right"></i></div>
-                                    3D
-                                </div>
+                                
 
                             </div>
 
@@ -389,10 +449,12 @@
                         
                     </div>
 
-                    <div class="section" id="servicesSection">
+                    <div class="section smoothscroll" id="servicesSection">
 
                         <div class="sectionTitle">
-                            <span class="titleTxt">Services</span>
+                            <span class="titleTxt">
+                                <i class="fa-solid fa-user-gear sectionIcon"></i>SERVICES I OFFER
+                            </span>
                         </div>
 
                         <p class="sectionDescription">
@@ -413,7 +475,6 @@
                             <div id="servicesContainer">
 
                                 <div class="serviceTypeTitle">
-                                    <div class="typeIcon"><i class="fa-solid fa-circle-chevron-right"></i></div>
                                     Web
                                 </div>
 
@@ -421,7 +482,9 @@
 
                                     <div class="serviceCard">
 
-                                        <i class="fa-solid fa-code skillset_icon serviceIcon"></i>
+                                        <div class="serviceIconContainer">
+                                            <i class="fa-solid fa-code skillset_icon serviceIcon"></i>
+                                        </div>
 
                                         <div class="serviceName">Web Design and Development</div>
                                             
@@ -431,13 +494,17 @@
                                             Let's collaborate and bring your online goals to life!
                                         </div>
 
-                                        <a class="serviceReference" href="#contactsSection">reach out</a>
+                                        <div class="serviceReference">
+                                            <a class="referenceTxt" href="#contactsSection">reach out</a>
+                                        </div>
 
                                     </div>
 
                                     <div class="serviceCard">
 
-                                        <i class="fa-solid fa-code skillset_icon serviceIcon"></i>
+                                        <div class="serviceIconContainer">
+                                            <i class="fa-solid fa-code skillset_icon serviceIcon"></i>
+                                        </div>
 
                                         <div class="serviceName">Consulting and Training</div>
                                             
@@ -447,14 +514,15 @@
                                             turn your web development aspirations into a well-executed reality.
                                         </div>
 
-                                        <a class="serviceReference" href="#contactsSection">reach out</a>
+                                        <div class="serviceReference">
+                                            <a class="referenceTxt" href="#contactsSection">reach out</a>
+                                        </div>
 
                                     </div>
 
                                 </div>
 
                                 <div class="serviceTypeTitle">
-                                    <div class="typeIcon"><i class="fa-solid fa-circle-chevron-right"></i></div>
                                     Graphics
                                 </div>
 
@@ -462,9 +530,11 @@
 
                                     <div class="serviceCard">
 
-                                        <i class="fa-solid fa-pen-nib skillset_icon serviceIcon"></i>
+                                        <div class="serviceIconContainer">
+                                            <i class="fa-solid fa-pen-nib skillset_icon serviceIcon"></i>
+                                        </div>
 
-                                        <div class="serviceName">Logo/Brand design</div>
+                                        <div class="serviceName">2D Branding</div>
                                             
                                         <div class="serviceDetails">
                                             I'm here to bring your vision to life.Whether you're starting a new 
@@ -472,15 +542,19 @@
                                             your brand's visual identity and make it stand out in the market.
                                         </div>
 
-                                        <a class="serviceReference" href="#contactsSection">reach out</a>
+                                        <div class="serviceReference">
+                                            <a class="referenceTxt" href="#contactsSection">reach out</a>
+                                        </div>
 
                                     </div>
 
                                     <div class="serviceCard">
 
-                                        <i class="fa-solid fa-pen-nib skillset_icon serviceIcon"></i>
+                                        <div class="serviceIconContainer">
+                                            <i class="fa-solid fa-pen-nib skillset_icon serviceIcon"></i>
+                                        </div>
 
-                                        <div class="serviceName">Photo manipulation</div>
+                                        <div class="serviceName">Photo Manipulation</div>
                                             
                                         <div class="serviceDetails">
                                             I breathe new life into images, turning them into captivating tales that 
@@ -489,15 +563,19 @@
                                             becomes a personalized journey into the realms of creativity.
                                         </div>
 
-                                        <a class="serviceReference" href="#contactsSection">reach out</a>
+                                        <div class="serviceReference">
+                                            <a class="referenceTxt" href="#contactsSection">reach out</a>
+                                        </div>
 
                                     </div>
 
                                     <div class="serviceCard">
 
-                                        <i class="fa-solid fa-pen-nib skillset_icon serviceIcon"></i>
+                                        <div class="serviceIconContainer">
+                                            <i class="fa-solid fa-pen-nib skillset_icon serviceIcon"></i>
+                                        </div>
 
-                                        <div class="serviceName">Poster/Cover art design</div>
+                                        <div class="serviceName">Poster/Cover Art</div>
                                             
                                         <div class="serviceDetails">
                                             From dynamic posters that command attention to album covers that encapsulate the essence 
@@ -506,14 +584,15 @@
                                             I ensure each design is a seamless fusion of creativity and purpose.
                                         </div>
 
-                                        <a class="serviceReference" href="#contactsSection">reach out</a>
+                                        <div class="serviceReference">
+                                            <a class="referenceTxt" href="#contactsSection">reach out</a>
+                                        </div>
 
                                     </div>
 
                                 </div>
 
                                 <div class="serviceTypeTitle">
-                                    <div class="typeIcon"><i class="fa-solid fa-circle-chevron-right"></i></div>
                                     3D
                                 </div>
 
@@ -521,7 +600,9 @@
 
                                     <div class="serviceCard">
 
-                                        <i class="fa-solid fa-cube skillset_icon serviceIcon"></i>
+                                        <div class="serviceIconContainer">
+                                            <i class="fa-solid fa-cube skillset_icon serviceIcon"></i>
+                                        </div>
 
                                         <div class="serviceName">Hard Surface Modelling</div>
                                             
@@ -533,13 +614,17 @@
                                             attention to detail and a commitment to exceeding your expectations.
                                         </div>
 
-                                        <a class="serviceReference" href="#contactsSection">reach out</a>
+                                        <div class="serviceReference">
+                                            <a class="referenceTxt" href="#contactsSection">reach out</a>
+                                        </div>
 
                                     </div>
 
                                     <div class="serviceCard">
 
-                                        <i class="fa-solid fa-cube skillset_icon serviceIcon"></i>
+                                        <div class="serviceIconContainer">
+                                            <i class="fa-solid fa-cube skillset_icon serviceIcon"></i>
+                                        </div>
 
                                         <div class="serviceName">3D Branding</div>
                                             
@@ -550,7 +635,9 @@
                                             By integrating innovative 3D elements into your advertising campaigns.
                                         </div>
 
-                                        <a class="serviceReference" href="#contactsSection">reach out</a>
+                                        <div class="serviceReference">
+                                            <a class="referenceTxt" href="#contactsSection">reach out</a>
+                                        </div>
 
                                     </div>
 
@@ -564,84 +651,84 @@
                         
                     </div>
 
-                    <div id="pageFooter">
+                </div>
 
-                        <div id="contactsSection" class="footerContentContainer">
+                <div id="pageFooter" class="smoothscroll">
 
-                            <div class="FCCheader" >
-                                <!-- <i class="fa-solid fa-address-card"></i>
-                                &nbsp; -->
-                                Augustine Chulu®
-                            </div>
+                    <div id="footerContentContainer">
 
+                        <div id="logoSection" class="footerContent">
+
+                            <img alt="logo" id="footerLogo" src="../../images/branding.png">
+    
                         </div>
-
-                        <div id="contactsSection" class="footerContentContainer">
-
+    
+                        <div id="contactsSection" class="footerContent">
+    
                             <div class="FCCheader" >
                                 <!-- <i class="fa-solid fa-address-card"></i>
                                 &nbsp; -->
-                                Contact
+                                CONTACT
                             </div>
-
+    
                             <div class="FCCbody">
-
+    
                                 <a id="email_link" class="contactLink" href="mailto:chuluaugustine@gmail.com">
-
+    
                                     <i class="fa-brands fa-google"></i>
                                     &nbsp;
                                     <span class="account_name">chuluaugustine@gmail.com</span>
                                     &nbsp;
-
+    
                                 </a>
-
+    
                                 <a id="facebook_link" class="contactLink" href="https://web.facebook.com/august.chulu/">
-
+    
                                     <i class="fa-brands fa-facebook"></i>
                                     &nbsp;
                                     <span class="account_name">August Chulu</span>
                                     &nbsp;
-
+    
                                 </a>
-
+    
                                 <a id="instagram_link" class="contactLink" href="https://www.instagram.com/chuluaugustine/">
-
+    
                                     <i class="fa-brands fa-instagram"></i>
                                     &nbsp;
                                     <span class="account_name">August Chulu</span>
                                     &nbsp;
-
+    
                                 </a>
-
+    
                             </div>
-
+    
                         </div>
-
-                        <div id="menuSection" class="footerContentContainer">
-
+    
+                        <div id="menuSection" class="footerContent">
+    
                             <div class="FCCheader">
                                 <!-- <i class="fa-solid fa-bars"></i>
                                 &nbsp; -->
-                                Menu
+                                MENU
                             </div>
-
+    
                             <div class="FCCbody">
-
-                                <a href="#aboutSection" class="sectionLink">About</a>
-
-                                <a href="#skillsSection" class="sectionLink">Skills</a>
+    
+                                <a href="#aboutSection" class="footerSectionLink">About</a>
+    
+                                <a href="#skillsSection" class="footerSectionLink">Skills</a>
                 
-                                <a href="#projectsSection" class="sectionLink">Projects</a>
+                                <a href="#projectsSection" class="footerSectionLink">Projects</a>
                 
-                                <a href="#servicesSection" class="sectionLink">Services</a>
-
+                                <a href="#servicesSection" class="footerSectionLink">Services</a>
+    
                             </div>
-
+    
                         </div>
 
-                        <span id="copyright_txt" >Copyright © 2023 | Augustine Chulu®. All Rights Reserved</span>
-
                     </div>
+
+                    <div id="copyright_txt" >© AUGUST® 2024 | Augustine Chulu. All Rights Reserved</div>
 
                 </div>
 
@@ -655,8 +742,6 @@
 
 <script src="https://kit.fontawesome.com/acd912feac.js" crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
-
-<script type="text/javascript" src="js/homeJS.js"></script>
+<script defer type="text/javascript" src="js/homeJS.js"></script>
 
 </html>

@@ -1,16 +1,21 @@
 /*
 *THIS SCRIPT FILE HANDLES ALL EVENTS THAT OCCUR ON THE HOME PAGE
 */
+/* VARIABLE DECLERATION */
+const menu = document.getElementById('menu');
+const contentContainer = document.getElementById('contentContainer')
 
 /**************************************************************************************************************/
 /*THIS SECTION HANDLES THE MENU EVENTS ON MOBILE DEVICES*/
-var pagesBtn = document.getElementById('pagesBtn');
-var bottomBar = document.getElementById('bottomBar');
+var sectionsBtn = document.getElementById('sectionsBtn');
+var menuTray = document.getElementById('menuTray');
+var menuLogo = document.getElementById('menuLogo');
 
-pagesBtn.addEventListener('click', (event) =>{
-    
-    event.target.classList.toggle('activePagesBtn');
-    bottomBar.classList.toggle('visibleBottomBar');
+sectionsBtn.addEventListener('click', (event) =>{
+
+	sectionsBtn.classList.toggle('activateSectionBtn')
+    menuTray.classList.toggle('showMenuTray');
+	menuLogo.classList.toggle('hideMenuLogo');
 })
 
 /**************************************************************************************************************/
@@ -18,53 +23,81 @@ pagesBtn.addEventListener('click', (event) =>{
 /**************************************************************************************************************/
 /*THIS SECTION HANDLES THE PAGES SMOOTH SCROLL BEHAVIOR WHEN A MENU ITEM IS PRESSED*/
 
-const scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 1000, // Adjust the scrolling speed
-	offset: 180, // Offset to control the scrolling endpoint
-	updateURL: false, // Prevent the URL from updating
+const sectionLinks = document.querySelectorAll('a[href^="#"]');
+
+sectionLinks.forEach(trigger => {
+
+	trigger.onclick = (e) => {
+		
+		e.preventDefault();
+		let hash = e.target.getAttribute('href');
+		let target = document.querySelector(hash);
+		let headerOffset = 70;
+		let elementPosition = target.offsetTop;
+		let offsetPosition = elementPosition - headerOffset;
+
+		contentContainer.scrollTo({
+			top: offsetPosition,
+			behavior: "smooth"
+		});
+	};
+
 });
 
-// const links = document.querySelectorAll('a[href*="#"]');
-//     const sectionOffset = -500; // Adjust this to match your header height or desired offset
+const sections = document.querySelectorAll('.smoothscroll');
+const menuTrayLinks = document.querySelectorAll('.sectionLink');
 
-//     function updateActiveLink() {
-//         const fromTop = window.scrollY + sectionOffset;
+// Create an Intersection Observer
+const observer = new IntersectionObserver(entries => {
 
-//         links.forEach(link => {
-//             const section = document.querySelector(link.hash);
-//             if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+    entries.forEach(entry => {
 
-//                 if(!link.classList.contains('footer'))
-//                     link.classList.add('focusedSection');
+		// Check if the div is intersecting with the viewport
+		if (entry.isIntersecting) { 
+			// Log which div is intersecting
+			// console.log(`${entry.target.id} is intersecting.`);
+			entry.target.classList.add('floatingSection');
 
-//             } else {
+			document.querySelector("a[href='#" + entry.target.id + "']").classList.add('activeSectionLink');
+		}
 
-//                 link.classList.remove('focusedSection');
-//             }
-//         });
-//     }
+		if(!entry.isIntersecting){
+			entry.target.classList.remove('floatingSection');
 
-//     window.addEventListener('scroll', updateActiveLink);
+			document.querySelector("a[href='#" + entry.target.id + "']").classList.remove('activeSectionLink');
+		}
+
+    });
+  }, { 
+	root: null, // observe relative to the document's viewport
+	rootMargin: '-30px 0px -70% 0px', // a negative top margin equal to the height of the target div
+	threshold: 0
+});
+
+  // Start observing each target div
+  sections.forEach((div, index) => {
+    // Set a custom data attribute to store the index
+    div.dataset.index = index;
+    
+    // Observe the div
+    observer.observe(div);
+  });
 
 /**************************************************************************************************************/
 
 /**************************************************************************************************************/
 /*THIS SECTION HANDLES THE EFFECTS CAUSED BY THE STICKY BEHAVIOUR OF THE MENU*/
 
-var stickyElement = document.getElementById('menu');
-var pageHeader = document.getElementById('pageHeader');
+contentContainer.addEventListener('scroll', () => {
+	
+	var rect = menu.getBoundingClientRect();
+    var offset = rect.top;
 
-window.addEventListener('scroll', function() {
-    
-    var rect = pageHeader.getBoundingClientRect();
-    var offset = rect.bottom;
-
-    if (offset <= 0) {
+    if (offset <= 5) {
     // Element is now sticky
-        stickyElement.classList.add('visible');
-    } else if (offset > 0) {
+		menu.classList.add('showMenu');
+    } else{
     // Element is no longer sticky
-        stickyElement.classList.remove('visible');
+		menu.classList.remove('showMenu');
     }
-
 });
