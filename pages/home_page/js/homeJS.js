@@ -1,21 +1,90 @@
 /*
 *THIS SCRIPT FILE HANDLES ALL EVENTS THAT OCCUR ON THE HOME PAGE
 */
+
 /* VARIABLE DECLERATION */
+
+const loadScreen = document.getElementById('loadingScreen');
+
+const orangeLetters = document.querySelectorAll('.orangeLetter');
+const blueLetters = document.querySelectorAll('.blueLetter');
+const animationContainer = document.getElementById('animationContainer');
+
+const animateLoad = (duration) => {
+
+	blueLetters.forEach(letter => {
+		letter.style.animation = `${duration}ms infinite clockwiseStart`;
+	})
+
+	orangeLetters.forEach(letter => {
+
+		if(letter.id != 'T'){
+			letter.style.animation = `${duration}ms infinite counterClockwiseStart`;
+		}
+		
+	})
+
+	setTimeout(() => {
+		
+		blueLetters.forEach(letter => {
+			letter.style.animation = `${duration / 2}ms linear infinite clockwiseLoop`;
+		})
+	
+		orangeLetters.forEach(letter => {
+	
+			if(letter.id != 'T'){
+				letter.style.animation = `${duration / 2}ms linear infinite counterClockwiseLoop`;
+			}
+			
+		})
+
+	}, duration);
+
+	setTimeout(() => {
+		
+		blueLetters.forEach(letter => {
+			letter.style.animation = `${duration}ms linear 1 clockwiseEnd`;
+		})
+	
+		orangeLetters.forEach(letter => {
+	
+			if(letter.id != 'T'){
+				letter.style.animation = `${duration}ms linear 1 counterClockwiseEnd`;
+			}
+			
+		})
+
+	}, duration * 2);
+
+	setTimeout(() => {
+
+		loadScreen.classList.add('fade')
+
+	}, duration * 3.3);
+
+	setTimeout(() => {
+		loadScreen.style.display = `none`;
+
+	}, duration * 3.6);
+
+}
+
+document.addEventListener('load', animateLoad(4000));
+
 const menu = document.getElementById('menu');
-const contentContainer = document.getElementById('contentContainer')
+const contentContainer = document.getElementById('contentContainer');
+const pageHeader = document.getElementById('pageHeader');
+const menuLinks = document.getElementsByClassName('sectionLink');
 
 /**************************************************************************************************************/
 /*THIS SECTION HANDLES THE MENU EVENTS ON MOBILE DEVICES*/
 var sectionsBtn = document.getElementById('sectionsBtn');
 var menuTray = document.getElementById('menuTray');
-var menuLogo = document.getElementById('menuLogo');
 
 sectionsBtn.addEventListener('click', (event) =>{
 
-	sectionsBtn.classList.toggle('activateSectionBtn')
+	sectionsBtn.classList.toggle('activateSectionBtn');
     menuTray.classList.toggle('showMenuTray');
-	menuLogo.classList.toggle('hideMenuLogo');
 })
 
 /**************************************************************************************************************/
@@ -30,7 +99,7 @@ sectionLinks.forEach(trigger => {
 	trigger.onclick = (e) => {
 		
 		e.preventDefault();
-		let hash = e.target.getAttribute('href');
+		let hash = e.currentTarget.getAttribute('href');
 		let target = document.querySelector(hash);
 		let headerOffset = 70;
 		let elementPosition = target.offsetTop;
@@ -40,6 +109,17 @@ sectionLinks.forEach(trigger => {
 			top: offsetPosition,
 			behavior: "smooth"
 		});
+
+		if(hash === '#pageFooter' && !e.currentTarget.classList.contains('sectionLink')){
+
+			document.querySelector('#contactInfo').classList.add('pulse');
+
+			setTimeout(() => {
+				document.querySelector('#contactInfo').classList.remove('pulse');
+			  }, "3000");
+			
+		}
+
 	};
 
 });
@@ -56,7 +136,9 @@ const observer = new IntersectionObserver(entries => {
 		if (entry.isIntersecting) { 
 			// Log which div is intersecting
 			// console.log(`${entry.target.id} is intersecting.`);
-			entry.target.classList.add('floatingSection');
+			if(entry.target.id != 'pageFooter'){
+				entry.target.classList.add('floatingSection');
+			}
 
 			document.querySelector("a[href='#" + entry.target.id + "']").classList.add('activeSectionLink');
 		}
@@ -70,7 +152,7 @@ const observer = new IntersectionObserver(entries => {
     });
   }, { 
 	root: null, // observe relative to the document's viewport
-	rootMargin: '-30px 0px -70% 0px', // a negative top margin equal to the height of the target div
+	rootMargin: '-50% 0px -60% 0px', // a negative top margin equal to the height of the target div
 	threshold: 0
 });
 
@@ -90,10 +172,10 @@ const observer = new IntersectionObserver(entries => {
 
 contentContainer.addEventListener('scroll', () => {
 	
-	var rect = menu.getBoundingClientRect();
-    var offset = rect.top;
-
-    if (offset <= 5) {
+	var rect = pageHeader.getBoundingClientRect();
+    var offset = rect.bottom;
+	// console.log(offset)
+    if (offset < 0) {
     // Element is now sticky
 		menu.classList.add('showMenu');
     } else{
