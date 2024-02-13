@@ -9,8 +9,15 @@ const loadScreen = document.getElementById('loadingScreen');
 const orangeLetters = document.querySelectorAll('.orangeLetter');
 const blueLetters = document.querySelectorAll('.blueLetter');
 const animationContainer = document.getElementById('animationContainer');
+const progressBar = document.getElementById('progressBar');
+const menu = document.getElementById('menu');
+const contentContainer = document.getElementById('contentContainer');
+const pageHeader = document.getElementById('pageHeader');
+const menuLinks = document.getElementsByClassName('sectionLink');
 
 const animateLoad = (duration) => {
+
+	progressBar.classList.add('stretch');
 
 	blueLetters.forEach(letter => {
 		letter.style.animation = `${duration}ms infinite clockwiseStart`;
@@ -58,6 +65,7 @@ const animateLoad = (duration) => {
 
 	setTimeout(() => {
 
+		contentContainer.style.display = 'grid';
 		loadScreen.classList.add('fade')
 
 	}, duration * 3.3);
@@ -69,12 +77,7 @@ const animateLoad = (duration) => {
 
 }
 
-document.addEventListener('load', animateLoad(4000));
-
-const menu = document.getElementById('menu');
-const contentContainer = document.getElementById('contentContainer');
-const pageHeader = document.getElementById('pageHeader');
-const menuLinks = document.getElementsByClassName('sectionLink');
+document.addEventListener('load', animateLoad(2000));
 
 /**************************************************************************************************************/
 /*THIS SECTION HANDLES THE MENU EVENTS ON MOBILE DEVICES*/

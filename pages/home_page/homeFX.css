@@ -15,7 +15,7 @@
     --gray70: #ddd;
     --gray30: #333;
 
-    --theme: #FE7107;
+    --theme: #f15a24;
     --theme-tint: #ffc477;
 
     --accent: #3f7721;
@@ -85,7 +85,7 @@ body{
     min-height: 100dvh;
     max-width: 100vw;
 
-    display: grid;
+    display: none;
     grid-auto-flow: row;
     grid-template-columns: 1fr;
 }
@@ -100,17 +100,35 @@ body{
 
     display: grid;
     place-items: center;
-    background-color: var(--surface);
+    background-image: url(../../images/background_pattern.png);
+    background-size: 300px 300px;
+    background-repeat: repeat;
+    background-color: #fff;
 
-    transition: opacity 1s, visibility 0.5s;
+    transition: opacity 0.5s, visibility 0.5s, transform 1s;
 }
 
-#animationContainer{
+#logoAnimate{
     height: 100px;
 
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+}
+
+#progressBar{
+    height: 8px;
+    width: 5px;
+    border-radius: 100px;
+
+    margin: 20px auto 0 auto;
+    background-color: var(--theme-tint);
+
+    transition: width 6s;
+}
+
+.stretch{
+    width: 90% !important;
 }
 
 .letterBox{
@@ -175,6 +193,7 @@ body{
 .fade{
     opacity: 0;
     visibility: hidden;
+    transform: scale(-50%);
 }
 
 .blueLetter{
@@ -185,21 +204,14 @@ body{
     fill:#f15a24;
 }
 
-#pageHeader::before{
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background-image: url(../../images/background_pattern.png);
-    background-size: 300px 300px;
-    background-repeat: repeat;
-    background-color: #00000066;
-    /* filter: blur(3px); */
-}
-
 #pageHeader{
     z-index: 5;
     position: relative;
+    background-image: url(../../images/background_pattern.png);
+    background-size: 300px 300px;
+    background-repeat: repeat;
+    background-color: #fff;
+
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: auto;
@@ -234,14 +246,14 @@ body{
 }
 
 #greeting{
-    color: var(--gray30);
+    color: var(--theme);
     font-size: var(--big);
     font-family: headerFont;
     text-align: center;
 }
 
 #authorName{
-    color: #000;
+    color: var(--theme);
     grid-row: 2;
     text-align: center;
     font-size: var(--biggest);
@@ -254,7 +266,7 @@ body{
     font-weight: bold;
     font-size: var(--big);
     text-align: center;
-    color: #fff;
+    color: var(--gray50);
 }
 
 #contactBubblesContainer{
@@ -274,20 +286,21 @@ body{
     height: 0;
     width: 0;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--theme-tint);
 
     transition: opacity .5s, height .5s, width .5s;
 }
 
 .headerBubble{
     position: relative;
-    color: var(--gray30);
-    background-color: #ffffff33;
+    color: var(--gray50);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: 50%;
     
     height: 40px;
     width: 40px;
-    box-shadow: 0 0 10px 1px #00000066;
+    box-shadow: 0 0 5px 1px #00000066;
 
     display: grid;
     grid-template-columns: auto;
@@ -299,7 +312,7 @@ body{
 }
 
 .headerBubble:hover{
-    color: var(--theme);
+    color: #fff;
 }
 
 .headerBubble:hover::before{
@@ -320,7 +333,6 @@ body{
     top: 0;
     height: 0;
     width: 100%;
-    overflow: hidden;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -335,7 +347,7 @@ body{
 .showMenu{
     opacity: 1 !important;
     visibility: visible !important;
-    height: 60px !important;
+    height: 70px !important;
 }
 
 #menuLogo{
@@ -353,19 +365,19 @@ body{
     z-index: 10;
     
     justify-self: end;
-    height:40px;
-    width: 40px;
+    height:45px;
+    width: 45px;
     margin-right: 10px;
+    color: #fff;
     background-color: var(--theme);
     border-radius: 50%;
     border: none;
-    box-shadow: 0 0 5px 2px #00000066;
+    box-shadow: 0 0 5px 1px #00000066;
 
-    transition: transform 1s;
+    transition: color .5s, background-color .5s;
 }
 
 #sectionsBtn:hover{
-    transform: scale(1.2);
     cursor: pointer;
 }
 
@@ -377,7 +389,6 @@ body{
     background-image: url(../../images/background_pattern.png);
     background-size: 300px 300px;
     background-repeat: repeat;
-    background-color: #00000066;
 }
 
 #menuTray{
@@ -393,13 +404,15 @@ body{
     row-gap: 10px;
     box-sizing: border-box;
     padding: 5px 45px 5px 5px;
-    background-color: var(--surface);
+    background-color: var(--gray70);
+    box-shadow: var(--floating);
     transform: translateX(-35px) translateY(20px);
     opacity: 0;
     transition: transform 1s, opacity .5s, height .5s, width .5s;
 }
 
 .activateSectionBtn{
+    color: var(--theme) !important;
     background-color: #fff !important;
 }
 
@@ -417,7 +430,7 @@ body{
 
 .sectionLink{
     flex: 0 0 auto;
-    color: #fff;
+    color: #000;
     white-space: nowrap;
     align-self: center;
 
@@ -429,7 +442,7 @@ body{
 }
 
 .activeSectionLink{
-    color: #000 !important;
+    color: var(--theme) !important;
 }
 
 #pageBody{
@@ -690,33 +703,43 @@ body{
 .projectCard::before{
     content: "";
     position: absolute;
-    bottom: 0;
     z-index: 0;
-    background-color: var(--theme);
-    width: 100%;
-    height: 0;
+    inset: 0;
+    opacity: 0;
+    background-color: #96a8c466;
 
-    transition: height 1s;
+    transition: opacity 1s;
 }
 
 .projectCard{
     flex: 0 0 auto;
-    height: 500px;
+    height: 450px;
     width: 250px;
     position: relative;
     justify-self: center;
+    border: solid 4px #fff;
     border-radius: var(--barelyRounded);
-    background-color: var(--gray30);
+
+    background-image: url(../../images/background_pattern.png);
+    background-size: 300px 300px;
+    background-repeat: repeat;
+
+    background-color: #fff;
+
     overflow: hidden;
     scroll-snap-align: center;
-    box-shadow: 0  0 10px 0 #00000099;
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto 280px;
-    justify-content: center;
+    grid-template-rows: auto auto 250px;
+    place-items: center;
     
-    transition: background-color 1s, transform 1s;
+    transition: transform 1s, box-shadow 1s;
+}
+
+.projectCard:hover{
+    transform: scale(1.03);
+    box-shadow: var(--floating);
 }
 
 .projectCard:hover .projectDetails{
@@ -729,29 +752,29 @@ body{
 }
 
 .projectCard:hover .projectBubble{
-    color: #fff;
-    background-color: #ffffff44;
+    color: var(--gray30);
+    background-color: #00000033;
 }
 
 .projectCard:hover::before{
-    height: 100%;
+    opacity: 0.5;
 }
 
 .projectDetails{
     grid-row: 1;
     width: 100%;
     z-index: 2;
-    color: var(--gray70);
+    color: var(--gray50);
     text-align: center;
 
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px;
 }
 
 .projectTitle{
     font-family: headerFont;
     font-size: var(--big);
-    padding:  10px 0;
+    padding: 10px 0;
 
     transition: color 1s;
 }
@@ -777,7 +800,7 @@ body{
     height: 0;
     width: 0;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--gray30);
 
     transition: opacity .5s, height .5s, width .5s;
 }
@@ -788,7 +811,6 @@ body{
     
     height: 40px;
     width: 40px;
-    background-color: var(--gray70);
 
     display: grid;
     grid-template-columns: auto;
@@ -811,8 +833,10 @@ body{
 
 .projectImg{
     grid-row: 3;
-    height: 100%;
-    filter: blur(5px);
+
+    height: 230px;
+    width: 230px;
+    border-radius: var(--barelyRounded);
 
     transition: filter 1s, transform 1s;
 }
@@ -1116,17 +1140,23 @@ body{
 {
 
     ::-webkit-scrollbar {
-        width: 8px;
-        background: #fff;
+        width: 10px;
+        background: var(--gray30);
+        border-radius: 100px;
     }
     
     ::-webkit-scrollbar-thumb {
-        background: var(--gray30);
+        background: var(--gray50);
+        border-radius: 100px;
     }
 
     /* #rootContainer{
         font-size: var(--desktop_default_fontsize);
     } */
+    
+    #animationContainer{
+        transform: scale(1.2);
+    }
     
     #contentContainer{
         grid-template-columns: 12% 1fr 12%;
@@ -1171,16 +1201,6 @@ body{
         height: auto !important;
     }
 
-    /* #menuLogo{
-        display: none;
-        grid-column: 1;
-        grid-row: 1;
-        width: 170px;
-        padding-left: 10px;
-
-        transition: transform 1s, opacity .5s;
-    } */
-
     #sectionsBtn{
         position: absolute;
         z-index: 10;
@@ -1208,12 +1228,6 @@ body{
         z-index: -1;
         inset: 0;
         border-radius: 0;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-        background-image: url(../../images/background_pattern.png);
-        background-size: 300px 300px;
-        background-repeat: repeat;
-        background-color: #00000066;
     }
 
     #menuTray{
@@ -1227,10 +1241,11 @@ body{
         grid-template-rows: auto auto auto auto auto;
         place-items: center;
         row-gap: 20px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
 
         box-sizing: border-box;
         padding: 0;
-        background-color: transparent;
         transform: translateX(0) translateY(20px);
         opacity: 1;
         transition: transform 1s, opacity .5s, height .5s, width .5s, padding .5s;
