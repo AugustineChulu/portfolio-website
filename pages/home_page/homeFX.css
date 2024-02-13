@@ -275,7 +275,7 @@ body{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    column-gap: 15px;
+    column-gap: 10px;
 }
 
 .headerBubble::before{
@@ -286,21 +286,19 @@ body{
     height: 0;
     width: 0;
     border-radius: 50%;
-    background-color: var(--theme-tint);
+    background-color: var(--gray30);
 
     transition: opacity .5s, height .5s, width .5s;
 }
 
 .headerBubble{
     position: relative;
-    color: var(--gray50);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    color: var(--gray30);
     border-radius: 50%;
+    background-color: #00000033;
     
     height: 40px;
     width: 40px;
-    box-shadow: 0 0 5px 1px #00000066;
 
     display: grid;
     grid-template-columns: auto;
@@ -703,16 +701,17 @@ body{
 .projectCard::before{
     content: "";
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     inset: 0;
     opacity: 0;
-    background-color: #96a8c466;
+    background-color: var(--theme-tint);
 
     transition: opacity 1s;
 }
 
 .projectCard{
     flex: 0 0 auto;
+    z-index: 0;
     height: 450px;
     width: 250px;
     position: relative;
@@ -757,7 +756,7 @@ body{
 }
 
 .projectCard:hover::before{
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 .projectDetails{
@@ -822,7 +821,7 @@ body{
 }
 
 .projectBubble:hover{
-    color: var(--theme) !important;
+    color: #fff !important;
 }
 
 .projectBubble:hover::before{
@@ -879,13 +878,9 @@ body{
 .serviceCard{
     border-radius: var(--barelyRounded);
     position: relative;
-    background-color: var(--accent-tint);
+    background-color: var(--theme-tint);
     color: var(--gray30);
 }
-
-/* .serviceCard:hover .serviceIcon{
-    transform: scale(1.2);
-} */
 
 .serviceIconContainer{
     width: 100%;
@@ -900,14 +895,12 @@ body{
 .serviceIcon{
     height: 25px;
     width: 25px;
-    background-color: var(--accent-tint);
-    color: var(--gray30);
+    background-color: var(--theme);
+    color: #fff;
     border: solid 10px var(--surface);
 
     padding: 15px;
     border-radius: 50%;
-
-    /* transition: transform .5s; */
 }
 
 .serviceName{
@@ -933,10 +926,9 @@ body{
 
 .referenceTxt{
     display: inline-block;
-    color: var(--accent-tint);
-    background-color: var(--gray30);
+    color: #fff;
+    background-color: var(--theme);
     font-weight: bold;
-    /* border: solid 10px var(--surface); */
     border-radius: var(--barelyRounded);
     box-sizing: border-box;
     padding: 8px 18px;
