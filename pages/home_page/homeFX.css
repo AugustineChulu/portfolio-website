@@ -1011,8 +1011,8 @@ body{
 
 .contactLink:hover{
     color: var(--gray30);
-    background-color: #fff;
-    border-color: #fff;
+    background-color: var(--theme-tint);
+    border-color: var(--theme-tint);
     box-shadow: var(--floating);
 }
 
@@ -1026,7 +1026,7 @@ body{
 }
 
 .footerSectionLink:hover{
-    color: #fff;
+    color: var(--theme);
     transform: translateX(8px);
 }
 
