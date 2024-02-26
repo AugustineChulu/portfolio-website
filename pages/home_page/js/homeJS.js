@@ -20,13 +20,13 @@ const animateLoad = (duration) => {
 	progressBar.classList.add('stretch');
 
 	blueLetters.forEach(letter => {
-		letter.style.animation = `${duration}ms infinite clockwiseStart`;
+		letter.style.animation = `clockwiseStart ${duration}ms infinite`;
 	})
 
 	orangeLetters.forEach(letter => {
 
 		if(letter.id != 'T'){
-			letter.style.animation = `${duration}ms infinite counterClockwiseStart`;
+			letter.style.animation = `counterClockwiseStart ${duration}ms infinite`;
 		}
 		
 	})
@@ -34,13 +34,13 @@ const animateLoad = (duration) => {
 	setTimeout(() => {
 		
 		blueLetters.forEach(letter => {
-			letter.style.animation = `${duration / 2}ms linear infinite clockwiseLoop`;
+			letter.style.animation = `clockwiseLoop ${duration / 2}ms linear infinite`;
 		})
 	
 		orangeLetters.forEach(letter => {
 	
 			if(letter.id != 'T'){
-				letter.style.animation = `${duration / 2}ms linear infinite counterClockwiseLoop`;
+				letter.style.animation = `counterClockwiseLoop ${duration / 2}ms linear infinite`;
 			}
 			
 		})
@@ -50,13 +50,13 @@ const animateLoad = (duration) => {
 	setTimeout(() => {
 		
 		blueLetters.forEach(letter => {
-			letter.style.animation = `${duration}ms linear 1 clockwiseEnd`;
+			letter.style.animation = `clockwiseEnd ${duration}ms linear 1`;
 		})
 	
 		orangeLetters.forEach(letter => {
 	
 			if(letter.id != 'T'){
-				letter.style.animation = `${duration}ms linear 1 counterClockwiseEnd`;
+				letter.style.animation = `counterClockwiseEnd ${duration}ms linear 1`;
 			}
 			
 		})

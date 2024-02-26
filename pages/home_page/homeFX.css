@@ -737,8 +737,8 @@ body{
 }
 
 .projectCard:hover{
-    transform: scale(1.03);
-    box-shadow: var(--floating);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 8px 2px #00000044;
 }
 
 .projectCard:hover .projectDetails{
@@ -748,6 +748,7 @@ body{
 .projectCard:hover .projectImg{
     filter: blur(0);
     transform: scale(1.1);
+    border-radius: 0;
 }
 
 .projectCard:hover .projectBubble{
@@ -837,7 +838,7 @@ body{
     width: 230px;
     border-radius: var(--barelyRounded);
 
-    transition: filter 1s, transform 1s;
+    transition: filter 1s, transform 1s, border-radius 1s;
 }
 
 #servicesContainer{
