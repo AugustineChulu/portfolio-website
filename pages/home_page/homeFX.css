@@ -33,7 +33,7 @@
 }
 
 @font-face {
-	font-family: headerFont;
+	/*font-family: headerFont;*/
 	src: url("../../fonts/aqua.ttf");
 }
 
@@ -64,9 +64,9 @@ body{
     padding: 0;
     /* font-size: var(--mobile_default_fontsize); */
 
-    font-family: 'Trebuchet MS';
+    /* font-family: 'Trebuchet MS'; */
     font-family: calibri;
-    font-family: bodyFont;
+    /* font-family: bodyFont; */
     font-size: 1rem;
     color: #000;
     overflow: hidden;
@@ -248,7 +248,7 @@ body{
 #greeting{
     color: var(--theme);
     font-size: var(--big);
-    font-family: headerFont;
+    /*font-family: headerFont;*/
     text-align: center;
 }
 
@@ -257,7 +257,8 @@ body{
     grid-row: 2;
     text-align: center;
     font-size: var(--biggest);
-    font-family: headerFont;
+    line-height: 0.85;
+    /*font-family: headerFont;*/
     font-weight: bold;
 }
 
@@ -471,7 +472,7 @@ body{
 
 .sectionTitle{
     display: inline-block;
-    font-family: headerFont;
+    /*font-family: headerFont;*/
     font-weight: bold;
 
     font-size: var(--big);
@@ -772,7 +773,7 @@ body{
 }
 
 .projectTitle{
-    font-family: headerFont;
+    /*font-family: headerFont;*/
     font-size: var(--big);
     padding: 10px 0;
 
@@ -971,7 +972,7 @@ body{
 }
 
 .FCCheader{
-    font-family: headerFont;
+    /*font-family: headerFont;*/
     font-weight: bold;
     font-size: var(--big);
     color: var(--gray30);
